@@ -11,7 +11,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{8781932F-74A1-6FA1-4C1F-C035CC699C2D}</ProjectGuid>
+    <ProjectGuid>{482A41BB-AA52-2DEF-7183-9675FB39E051}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -62,7 +62,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Interfaces\Damageable.cs" />
+    <Compile Include="Assets\Interfaces\IDamageable.cs" />
     <Compile Include="Assets\Objects\Buttons\Spell.cs" />
     <Compile Include="Assets\Objects\Buttons\Spell_Fire.cs" />
     <Compile Include="Assets\Objects\Buttons\Spell_Grass.cs" />
@@ -70,7 +70,9 @@
     <Compile Include="Assets\Objects\Buttons\Subject.cs" />
     <Compile Include="Assets\Objects\Monsters\Monster.cs" />
     <Compile Include="Assets\Objects\Player\Player.cs" />
+    <Compile Include="Assets\Objects\Player\SO_PlayerStats.cs" />
     <Compile Include="Assets\Objects\Utility\MonsterPool.cs" />
+    <Compile Include="Assets\Objects\Utility\Shield.cs" />
     <Reference Include="UnityEngine">
       <HintPath>D:/Unity/2019.4.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -594,37 +596,37 @@
       <HintPath>D:/Unity/2019.4.0f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>C:/Users/jessieaniguid/Desktop/GitVersions/Magic Game/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>C:/Users/jessieaniguid/Desktop/GitVersions/Magica/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>C:/Users/jessieaniguid/Desktop/GitVersions/Magic Game/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>C:/Users/jessieaniguid/Desktop/GitVersions/Magica/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/jessieaniguid/Desktop/GitVersions/Magic Game/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/jessieaniguid/Desktop/GitVersions/Magica/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:/Users/jessieaniguid/Desktop/GitVersions/Magic Game/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>C:/Users/jessieaniguid/Desktop/GitVersions/Magica/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>C:/Users/jessieaniguid/Desktop/GitVersions/Magic Game/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>C:/Users/jessieaniguid/Desktop/GitVersions/Magica/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/jessieaniguid/Desktop/GitVersions/Magic Game/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/jessieaniguid/Desktop/GitVersions/Magica/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>C:/Users/jessieaniguid/Desktop/GitVersions/Magic Game/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>C:/Users/jessieaniguid/Desktop/GitVersions/Magica/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>C:/Users/jessieaniguid/Desktop/GitVersions/Magic Game/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+      <HintPath>C:/Users/jessieaniguid/Desktop/GitVersions/Magica/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
-      <HintPath>C:/Users/jessieaniguid/Desktop/GitVersions/Magic Game/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
+      <HintPath>C:/Users/jessieaniguid/Desktop/GitVersions/Magica/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/jessieaniguid/Desktop/GitVersions/Magic Game/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/jessieaniguid/Desktop/GitVersions/Magica/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:/Users/jessieaniguid/Desktop/GitVersions/Magic Game/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>C:/Users/jessieaniguid/Desktop/GitVersions/Magica/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup></ItemGroup>

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Monster : MonoBehaviour, Damageable
+public class Monster : MonoBehaviour, IDamageable
 {
     enum Type
     {
@@ -15,17 +15,17 @@ public class Monster : MonoBehaviour, Damageable
     public float Health;
     public float Speed;
     float DamageMultiplier;
-    public float Damage;
+
+    [SerializeField]
+    private float Damage;
 
 
     public float MaxPoint;
 
     private void Start()
     {
-        //move this to object pooler!
+        Damage = 5f;
         MaxPoint = GameObject.FindGameObjectWithTag("Shield").transform.position.y;
-        //MaxPoint = Camera.main.WorldToScreenPoint(new Vector2(0, MaxPoint)).y;
-
 
         Health = 20;
         Speed = 2;
@@ -39,7 +39,7 @@ public class Monster : MonoBehaviour, Damageable
         if(transform.position.y < MaxPoint)
         {
             print("damaged player");
-            //MonsterPool.AddToInactivePool(gameObject);
+            GameObject.FindObjectOfType<Shield>().ApplyDamage(Damage);
             gameObject.SetActive(false);
             
         }

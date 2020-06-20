@@ -7,16 +7,25 @@ public class MonsterPool : MonoBehaviour
 
     public static List<GameObject> EnemyPool;
 
+    [SerializeField]
+    private int InactiveSpawn;
+    [SerializeField]
+    private int ActiveSpawn;
+
+
     public GameObject BaseCopy;
 
-
-    public float timer = 3;
+    [SerializeField]
+    private float TimerBeforeNextSpawn;
+    private float timer;
 
     // Start is called before the first frame update
     void Start()
     {
+        timer = TimerBeforeNextSpawn;
         EnemyPool = new List<GameObject>();
-        Produce(10, false);
+        Produce(InactiveSpawn, false);
+        Produce(ActiveSpawn, true);
 
         print(Screen.width);
     }
@@ -30,7 +39,7 @@ public class MonsterPool : MonoBehaviour
         }
         else
         {
-            timer = 3;
+            timer = TimerBeforeNextSpawn;
             ReactivateEnemy();
         }
     }
