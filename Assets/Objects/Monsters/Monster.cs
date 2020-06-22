@@ -31,7 +31,6 @@ public class Monster : MonoBehaviour, IDamageable
 
         if(transform.position.y < MaxPoint)
         {
-            print("damaged player");
             GameObject.FindObjectOfType<Shield>().ApplyDamage(Damage);
             gameObject.SetActive(false);
             

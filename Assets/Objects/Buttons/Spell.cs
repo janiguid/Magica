@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class Spell:MonoBehaviour
 {
 
-    protected Type.ElementalType element;
+    public Type.ElementalType element;
 
     Vector3 minBounds;
     Vector3 maxBounds;
@@ -29,16 +29,24 @@ public abstract class Spell:MonoBehaviour
         yMax = maxBounds.y;
 
 
-        SetElement();
+        InitializeElement();
     }
 
-    public virtual void SetElement()
+    public virtual void InitializeElement()
     {
         print("Set base element. No bueno");
     }
 
     public virtual bool Trigger(float x, float y) {
-        print("Base spell triggered. No bueno");
+        if (xMin < x && x < xMax)
+        {
+            if (yMin < y && y < yMax)
+            {
+                GameObject.FindObjectOfType<Player>().SetElement(element);
+                return true;
+            }
+        }
+
         return false;
     }
 }

@@ -13,10 +13,16 @@ public class Player : Spell
     }
 
 
-    public override void SetElement()
+    public override void InitializeElement()
     {
         print("Successfully set to neutral");
         element = Type.ElementalType.Neutral;
+    }
+
+    public void SetElement(Type.ElementalType elem)
+    {
+        element = elem;
+        print("New element is: " + element);
     }
 
     public override bool Trigger(float x, float y)
@@ -25,7 +31,6 @@ public class Player : Spell
         {
             if (yMin < y && y < yMax)
             {
-                print(element);
 
                 return true;
             }

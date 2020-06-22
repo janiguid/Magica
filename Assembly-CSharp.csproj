@@ -73,6 +73,7 @@
     <Compile Include="Assets\Objects\Player\SO_PlayerStats.cs" />
     <Compile Include="Assets\Objects\Utility\MonsterPool.cs" />
     <Compile Include="Assets\Objects\Utility\Shield.cs" />
+    <Compile Include="Assets\Objects\Utility\Targeter.cs" />
     <Compile Include="Assets\Objects\Utility\Type.cs" />
     <Reference Include="UnityEngine">
       <HintPath>D:/Unity/2019.4.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
