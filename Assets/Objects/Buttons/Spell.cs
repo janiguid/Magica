@@ -4,6 +4,9 @@ using UnityEngine;
 
 public abstract class Spell:MonoBehaviour
 {
+
+    protected Type.ElementalType element;
+
     Vector3 minBounds;
     Vector3 maxBounds;
 
@@ -25,6 +28,13 @@ public abstract class Spell:MonoBehaviour
         yMin = minBounds.y;
         yMax = maxBounds.y;
 
+
+        SetElement();
+    }
+
+    public virtual void SetElement()
+    {
+        print("Set base element. No bueno");
     }
 
     public virtual bool Trigger(float x, float y) {

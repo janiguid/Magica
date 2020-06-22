@@ -4,14 +4,7 @@ using UnityEngine;
 
 public class Monster : MonoBehaviour, IDamageable
 {
-    enum Type
-    {
-        Grass,
-        Fire,
-        Water
-    };
 
-    Type Element;
     public float Health;
     public float Speed;
     float DamageMultiplier;
