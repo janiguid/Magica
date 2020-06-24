@@ -35,7 +35,6 @@ public class Subject : MonoBehaviour
         {
             Touch point = Input.GetTouch(0);
 
-            print("Toucha me!");
             for(int i = 0; i < Observers.Length; ++i)
             {
                 if(Observers[i].Trigger(point.position.x, point.position.y))

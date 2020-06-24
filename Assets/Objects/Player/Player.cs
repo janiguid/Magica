@@ -4,7 +4,16 @@ using UnityEngine;
 
 public class Player : Spell
 {
+    private Targeter TargetLocator;
+    public GameObject Spell;
+    public GameObject Blast;
 
+    private void Awake()
+    {
+        TargetLocator = GameObject.FindObjectOfType<Targeter>();
+        Blast = Instantiate(Spell);
+        Blast.GetComponent<Projectile>().ResetPosition();
+    }
 
     // Update is called once per frame
     void Update()
@@ -31,7 +40,8 @@ public class Player : Spell
         {
             if (yMin < y && y < yMax)
             {
-
+                print("Hit player");
+                Blast.GetComponent<Projectile>().Activate(TargetLocator.ClosestMonster.transform.position, element);
                 return true;
             }
         }

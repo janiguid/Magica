@@ -566,6 +566,8 @@ MonoBehaviour:
   xMax: 0
   yMin: 0
   yMax: 0
+  Spell: {fileID: 4496144008915863065, guid: 17dd754bbda74f04e939228e9683bb53, type: 3}
+  Blast: {fileID: 0}
 --- !u!212 &760315179
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -848,6 +850,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ClosestMonster: {fileID: 453235841}
+  Monsters: []
+  ClosestPos: {x: 0, y: 0}
+  MaxPos: {x: 0, y: 0}
 --- !u!1 &2062922169
 GameObject:
   m_ObjectHideFlags: 0
