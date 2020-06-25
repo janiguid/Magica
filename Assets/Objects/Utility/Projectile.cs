@@ -7,13 +7,15 @@ public class Projectile : MonoBehaviour
 
     Vector3 Target;
     Type.ElementalType Type;
-    float speed;
+    [SerializeField]
+    private float initialSpeed;
+    private float speed;
     Vector2 OriginalPosition;
 
     private void Start()
     {
         OriginalPosition = GameObject.FindObjectOfType<Player>().transform.position;
-        speed = 3f;
+        speed = initialSpeed;
     }
 
     public void ResetPosition()

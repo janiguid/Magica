@@ -41,7 +41,7 @@ public class Player : Spell
             if (yMin < y && y < yMax)
             {
                 print("Hit player");
-                Blast.GetComponent<Projectile>().Activate(TargetLocator.ClosestMonster.transform.position, element);
+                Blast.GetComponent<Projectile>().Activate(TargetLocator.GetClosestMonster().transform.position, element);
                 return true;
             }
         }

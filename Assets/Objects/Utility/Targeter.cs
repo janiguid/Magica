@@ -7,13 +7,16 @@ public class Targeter : MonoBehaviour
 
     public GameObject ClosestMonster;
     public Monster[] Monsters;
-    public Vector2 ClosestPos;
+    public Vector2 MinPos;
     public Vector2 MaxPos;
-
+    public Vector2 InitialMin;
 
     private void Start()
     {
         MaxPos = GameObject.FindObjectOfType<Shield>().transform.position;
+        MaxPos.y += 0.1f;
+        InitialMin = GameObject.FindObjectOfType<MonsterPool>().transform.position;
+        MinPos = InitialMin;
     }
 
     // Update is called once per frame
@@ -27,30 +30,24 @@ public class Targeter : MonoBehaviour
 
         for(int i = 0; i < Monsters.Length; ++i)
         {
-            if (Monsters[i].gameObject.transform.position.y > ClosestMonster.transform.position.y)
-            {
-                Monsters[i].GetComponent<SpriteRenderer>().color = Color.red;
-            }
+            if (MinPos.y <= MaxPos.y) MinPos = InitialMin;
 
-            if (Monsters[i].gameObject.transform.position.y <= ClosestMonster.transform.position.y)
+            if(Monsters[i].transform.position.y < MinPos.y)
             {
                 ClosestMonster = Monsters[i].gameObject;
+                MinPos.y = ClosestMonster.transform.position.y;
                 ClosestMonster.GetComponent<SpriteRenderer>().color = Color.yellow;
-                ClosestPos = ClosestMonster.transform.position;
             }
             else
             {
-                ClosestMonster = Monsters[i].gameObject;
-                //Monsters[i].gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+                Monsters[i].GetComponent<SpriteRenderer>().color = Color.red;
             }
-
         }
         
     }
 
     public GameObject GetClosestMonster()
     {
-
         return ClosestMonster;
     }
 }
