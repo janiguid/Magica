@@ -44,4 +44,21 @@ public class Projectile : MonoBehaviour
             transform.position = Vector2.MoveTowards(transform.position, Target, step);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        bool isMonster = collision.gameObject.TryGetComponent<Monster>(out Monster potentialMonster);
+
+        if (isMonster)
+        {
+            Monster target = collision.gameObject.GetComponent<Monster>();
+            if (target.isTargeted)
+            {
+                print("Found Target Monster");
+                ResetPosition();
+                target.ApplyDamage(10);
+            }
+            print("Found monster");
+        }
+    }
 }

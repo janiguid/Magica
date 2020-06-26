@@ -24,7 +24,7 @@ public class Player : Spell
 
     public override void InitializeElement()
     {
-        print("Successfully set to neutral");
+        //print("Successfully set to neutral");
         element = Type.ElementalType.Neutral;
     }
 

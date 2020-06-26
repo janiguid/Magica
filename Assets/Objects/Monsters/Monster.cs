@@ -9,6 +9,8 @@ public class Monster : MonoBehaviour, IDamageable
     public float Speed;
     float DamageMultiplier;
 
+    public bool isTargeted;
+
     [SerializeField]
     private float Damage;
 

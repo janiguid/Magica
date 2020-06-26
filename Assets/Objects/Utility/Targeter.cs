@@ -37,10 +37,12 @@ public class Targeter : MonoBehaviour
                 ClosestMonster = Monsters[i].gameObject;
                 MinPos.y = ClosestMonster.transform.position.y;
                 ClosestMonster.GetComponent<SpriteRenderer>().color = Color.yellow;
+                Monsters[i].isTargeted = true;
             }
             else
             {
                 Monsters[i].GetComponent<SpriteRenderer>().color = Color.red;
+                Monsters[i].isTargeted = false;
             }
         }
         

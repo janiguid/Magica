@@ -6,7 +6,7 @@ public class Spell_Fire : Spell
 {
     public override void InitializeElement()
     {
-        print("Successfully set to fire type");
+        //print("Successfully set to fire type");
         element = Type.ElementalType.Fire;
     }
 
