@@ -21,7 +21,7 @@ public class Projectile : MonoBehaviour
     private void Start()
     {
         print("TEA");
-        OriginalPosition = GameObject.FindObjectOfType<Player>().transform.position;
+        OriginalPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
         Speed = InitialSpeed;
 
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();

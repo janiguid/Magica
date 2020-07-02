@@ -24,26 +24,26 @@ public class Subject : MonoBehaviour
         //loop through observers and send location of clicked point
 
 
-        if (ButtonCooldown > 0)
-        {
-            ButtonCooldown -= Time.deltaTime;
-            return;
-        }
+        //if (ButtonCooldown > 0)
+        //{
+        //    ButtonCooldown -= Time.deltaTime;
+        //    return;
+        //}
 
 
 
-        if (Input.touchCount == 1)
-        {
-            Touch point = Input.GetTouch(0);
+        //if (Input.touchCount == 1)
+        //{
+        //    Touch point = Input.GetTouch(0);
 
-            for(int i = 0; i < Observers.Length; ++i)
-            {
-                if(Observers[i].Trigger(point.position.x, point.position.y))
-                {
-                    ButtonCooldown = InitialButtonCooldown;
-                    break;
-                }
-            }
-        }
+        //    for(int i = 0; i < Observers.Length; ++i)
+        //    {
+        //        if(Observers[i].Trigger(point.position.x, point.position.y))
+        //        {
+        //            ButtonCooldown = InitialButtonCooldown;
+        //            break;
+        //        }
+        //    }
+        //}
     }
 }

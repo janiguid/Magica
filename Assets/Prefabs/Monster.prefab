@@ -100,7 +100,7 @@ MonoBehaviour:
   Health: 0
   Speed: 1
   isTargeted: 0
-  MyType: 0
+  MyType: 3
   Damage: 0
   MaxPoint: 0
 --- !u!61 &5491760397345589721

@@ -70,11 +70,6 @@ public class MonsterPool : MonoBehaviour
     }
 
 
-    public static void AddToInactivePool(GameObject enemy)
-    {
-        EnemyPool.Add(enemy);
-    }
-
     void Produce(int enemiesToProduce, bool active)
     {
         for (int i = 0; i < enemiesToProduce; ++i)
@@ -82,6 +77,7 @@ public class MonsterPool : MonoBehaviour
             GameObject temp = Instantiate(BaseCopy);
             temp.transform.position = Relocate();
             temp.SetActive(active);
+            temp.GetComponent<Monster>().ReconfigureType();
             EnemyPool.Add(temp);
         }
     }

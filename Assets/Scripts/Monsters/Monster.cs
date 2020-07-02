@@ -28,30 +28,12 @@ public class Monster : MonoBehaviour, IDamageable
         Damage = 5f;
         MaxPoint = GameObject.FindGameObjectWithTag("Shield").transform.position.y;
 
-        MyType = (Type.ElementalType)Random.Range(0, 2);
-
+        
         InitialHealth = 20;
         Health = InitialHealth;
         Speed = InitialSpeed;
 
-        if (MyType == Type.ElementalType.Grass)
-        {
-            InitialColor = Color.green;
-        }
-        else if (MyType == Type.ElementalType.Fire)
-        {
-            InitialColor = Color.red;
-        }
-        else if (MyType == Type.ElementalType.Water)
-        {
-            InitialColor = Color.blue;
-        }
-        else
-        {
-            InitialColor = Color.white;
-        }
-
-        ResetColor();
+        ReconfigureType();
     }
 
     private void OnEnable()
@@ -88,11 +70,36 @@ public class Monster : MonoBehaviour, IDamageable
             //MonsterPool.AddToInactivePool(gameObject);
             print("got hit");
             gameObject.SetActive(false);
+            ReconfigureType();
         }
+    }
+
+    public void ReconfigureType()
+    {
+        MyType = (Type.ElementalType)Random.Range(0, 3);
+        ResetColor();
+
     }
 
     public void ResetColor()
     {
+        if (MyType == Type.ElementalType.Grass)
+        {
+            InitialColor = Color.green;
+        }
+        else if (MyType == Type.ElementalType.Fire)
+        {
+            InitialColor = Color.red;
+        }
+        else if (MyType == Type.ElementalType.Water)
+        {
+            InitialColor = Color.blue;
+        }
+        else
+        {
+            InitialColor = Color.white;
+        }
+
         gameObject.GetComponent<SpriteRenderer>().color = InitialColor;
     }
 }

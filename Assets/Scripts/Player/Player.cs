@@ -4,23 +4,28 @@ using UnityEngine;
 
 public class Player : Spell
 {
+    [SerializeField] private float InitialButtonCooldown;
+    [SerializeField] private float ButtonCooldown;
     private Targeter TargetLocator;
-    public GameObject Spell;
+    public GameObject Prefab;
     public GameObject Blast;
     public Projectile MyProjectile;
 
     private void Awake()
     {
         TargetLocator = GameObject.FindObjectOfType<Targeter>();
-        Blast = Instantiate(Spell);
+        Blast = Instantiate(Prefab);
         MyProjectile = Blast.GetComponent<Projectile>();
         MyProjectile.ResetPosition();
     }
 
+    private void Update()
+    {
+        if (ButtonCooldown > 0) ButtonCooldown -= Time.deltaTime;
+    }
 
     public override void InitializeElement()
     {
-        
 
         //print("Successfully set to neutral");
         element = Type.ElementalType.Neutral;
@@ -32,21 +37,15 @@ public class Player : Spell
         print("New element is: " + element);
     }
 
-    public override bool Trigger(float x, float y)
+    public override void Trigger()
     {
-        if (xMin < x && x < xMax)
+        if(element == Type.ElementalType.Neutral)
         {
-            if (yMin < y && y < yMax)
-            {
-                print("Pressed player button");
-                MyProjectile.Activate(TargetLocator.GetClosestMonster().transform.position, element);
-                gameObject.GetComponent<SpriteRenderer>().color = Color.black;
-                return true;
-            }
+            print("Choose a spell");
+            return;
         }
-
-        gameObject.GetComponent<SpriteRenderer>().color = Color.white;
-
-        return false;
+        ButtonCooldown = InitialButtonCooldown;
+        MyProjectile.Activate(TargetLocator.GetClosestMonster().transform.position, element);
+        element = Type.ElementalType.Neutral;
     }
 }

@@ -115,7 +115,7 @@ MonoBehaviour:
   m_MinSize: {x: 681, y: 492}
   m_MaxSize: {x: 16006, y: 14042}
   vertical: 0
-  controlID: 102
+  controlID: 100
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_MinSize: {x: 405, y: 492}
   m_MaxSize: {x: 12005, y: 14042}
   vertical: 1
-  controlID: 107
+  controlID: 101
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_MinSize: {x: 405, y: 221}
   m_MaxSize: {x: 12005, y: 4021}
   vertical: 0
-  controlID: 108
+  controlID: 102
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -212,8 +212,8 @@ MonoBehaviour:
     y: 0
     width: 553
     height: 455
-  m_MinSize: {x: 102, y: 121}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -422,9 +422,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 72e6ffff
-      m_LastClickedID: -6542
-      m_ExpandedIDs: eee7ffff98e8ffff00e9ffff72f5ffff60fbffff2e37000066370000
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: cef6ffffe2f6ffff8af7ffff92f7ffff60fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -574,9 +574,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 756.89874, y: 1248.0408, z: -31.007578}
+    m_Target: {x: 0.44273904, y: -0.80429864, z: 35.015625}
     speed: 2
-    m_Value: {x: 772.64404, y: 1234.4033, z: -25.25972}
+    m_Value: {x: 0.44273904, y: -0.80429864, z: 35.015625}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -626,9 +626,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 1333.9852
+    m_Target: 5.9107394
     speed: 2
-    m_Value: 1276.5409
+    m_Value: 5.9107394
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -707,7 +707,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -2128
+  m_LastSelectedObjectID: 13360
 --- !u!114 &20
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -747,20 +747,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/Buttons
+    - Assets/Scripts/Player
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/Buttons
+  - Assets/Scripts/Player
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\jessieaniguid\Desktop\GitVersions\Magica
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: e8340000
-    m_LastClickedID: 13544
-    m_ExpandedIDs: 00000000d6340000e2340000
+    m_SelectedIDs: 22350000
+    m_LastClickedID: 13602
+    m_ExpandedIDs: 000000000235000018350000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -788,7 +788,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000d6340000
+    m_ExpandedIDs: 0000000002350000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -881,4 +881,4 @@ MonoBehaviour:
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 180
+  m_LastVerticalScrollValue: 0

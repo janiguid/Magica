@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="Assets\Interfaces\IDamageable.cs" />
     <Compile Include="Assets\Scripts\Buttons\Spell.cs" />
+    <Compile Include="Assets\Scripts\Buttons\SpellSound.cs" />
     <Compile Include="Assets\Scripts\Buttons\Spell_Fire.cs" />
     <Compile Include="Assets\Scripts\Buttons\Spell_Grass.cs" />
     <Compile Include="Assets\Scripts\Buttons\Spell_Water.cs" />
