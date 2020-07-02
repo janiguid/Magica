@@ -63,19 +63,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Interfaces\IDamageable.cs" />
-    <Compile Include="Assets\Objects\Buttons\Spell.cs" />
-    <Compile Include="Assets\Objects\Buttons\Spell_Fire.cs" />
-    <Compile Include="Assets\Objects\Buttons\Spell_Grass.cs" />
-    <Compile Include="Assets\Objects\Buttons\Spell_Water.cs" />
-    <Compile Include="Assets\Objects\Buttons\Subject.cs" />
-    <Compile Include="Assets\Objects\Monsters\Monster.cs" />
-    <Compile Include="Assets\Objects\Player\Player.cs" />
-    <Compile Include="Assets\Objects\Player\SO_PlayerStats.cs" />
-    <Compile Include="Assets\Objects\Utility\MonsterPool.cs" />
-    <Compile Include="Assets\Objects\Utility\Projectile.cs" />
-    <Compile Include="Assets\Objects\Utility\Shield.cs" />
-    <Compile Include="Assets\Objects\Utility\Targeter.cs" />
-    <Compile Include="Assets\Objects\Utility\Type.cs" />
+    <Compile Include="Assets\Scripts\Buttons\Spell.cs" />
+    <Compile Include="Assets\Scripts\Buttons\Spell_Fire.cs" />
+    <Compile Include="Assets\Scripts\Buttons\Spell_Grass.cs" />
+    <Compile Include="Assets\Scripts\Buttons\Spell_Water.cs" />
+    <Compile Include="Assets\Scripts\Buttons\Subject.cs" />
+    <Compile Include="Assets\Scripts\Monsters\Monster.cs" />
+    <Compile Include="Assets\Scripts\Player\Player.cs" />
+    <Compile Include="Assets\Scripts\Player\SO_PlayerStats.cs" />
+    <Compile Include="Assets\Scripts\UI\MenuElement.cs" />
+    <Compile Include="Assets\Scripts\Utility\MonsterDictionary.cs" />
+    <Compile Include="Assets\Scripts\Utility\MonsterPool.cs" />
+    <Compile Include="Assets\Scripts\Utility\Projectile.cs" />
+    <Compile Include="Assets\Scripts\Utility\Shield.cs" />
+    <Compile Include="Assets\Scripts\Utility\Targeter.cs" />
+    <Compile Include="Assets\Scripts\Utility\Type.cs" />
     <Reference Include="UnityEngine">
       <HintPath>D:/Unity/2019.4.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
