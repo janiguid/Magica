@@ -67,12 +67,10 @@ public class Projectile : MonoBehaviour
 
     public void Activate(Vector3 target, Type.ElementalType type)
     {
-        print("Activated");
+
         gameObject.SetActive(true);
         Target = target;
 
-        print("My target: " + Target);
-        print("Supposed target:" + target);
         MyType = type;
         Recolor();
 
@@ -100,7 +98,7 @@ public class Projectile : MonoBehaviour
         if (isMonster)
         {
             Monster target = collision.gameObject.GetComponent<Monster>();
-            if (target.isTargeted)
+            if (target.IsTargeted)
             {
                 print("Found Target Monster");
                 ResetPosition();

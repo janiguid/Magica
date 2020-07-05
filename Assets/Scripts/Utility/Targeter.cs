@@ -15,7 +15,7 @@ public class Targeter : MonoBehaviour
     {
         MaxPos = GameObject.FindObjectOfType<Shield>().transform.position;
         MaxPos.y += 0.1f;
-        InitialMin = GameObject.FindObjectOfType<MonsterPool>().transform.position;
+        InitialMin = GameObject.FindObjectOfType<MonsterQueue>().transform.position;
         MinPos = InitialMin;
     }
 
@@ -37,13 +37,11 @@ public class Targeter : MonoBehaviour
             {
                 ClosestMonster = Monsters[i].gameObject;
                 MinPos.y = ClosestMonster.transform.position.y;
-                //ClosestMonster.GetComponent<SpriteRenderer>().color = Color.yellow;
-                Monsters[i].isTargeted = true;
+                Monsters[i].IsTargeted = true;
             }
             else
             {
-                //Monsters[i].GetComponent<SpriteRenderer>().color = Color.red;
-                Monsters[i].isTargeted = false;
+                Monsters[i].IsTargeted = false;
             }
         }
         

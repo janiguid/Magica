@@ -4,29 +4,28 @@ using UnityEngine;
 
 public class MonsterPool : MonoBehaviour
 {
+    [SerializeField] private SO_LevelConfig config;
+    [SerializeField] private List<GameObject> EnemyPool;
+    [SerializeField] private Queue<GameObject> EnemyQueue;
+    [SerializeField] private GameObject BaseCopy;
+    [SerializeField] private int inactiveSpawn;
+    [SerializeField] private int activeSpawn;
+    [SerializeField] private float timerBeforeNextSpawn;
+    [SerializeField] private float timer;
 
-    public static List<GameObject> EnemyPool;
-
-    [SerializeField]
-    private int InactiveSpawn;
-    [SerializeField]
-    private int ActiveSpawn;
-
-
-    public GameObject BaseCopy;
-
-    [SerializeField]
-    private float TimerBeforeNextSpawn;
-    private float timer;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        timer = TimerBeforeNextSpawn;
+        timer = timerBeforeNextSpawn;
         EnemyPool = new List<GameObject>();
-        Produce(InactiveSpawn, false);
-        Produce(ActiveSpawn, true);
 
+        Produce(config.FireMonsterCount, Type.ElementalType.Fire);
+        Produce(config.WaterMonsterCount, Type.ElementalType.Water);
+        Produce(config.GrassMonsterCount, Type.ElementalType.Grass);
+
+        ReactivateEnemy();
     }
 
     // Update is called once per frame
@@ -38,7 +37,7 @@ public class MonsterPool : MonoBehaviour
         }
         else
         {
-            timer = TimerBeforeNextSpawn;
+            timer = timerBeforeNextSpawn;
             ReactivateEnemy();
         }
     }
@@ -70,14 +69,13 @@ public class MonsterPool : MonoBehaviour
     }
 
 
-    void Produce(int enemiesToProduce, bool active)
+    void Produce(int enemiesToProduce, Type.ElementalType type)
     {
         for (int i = 0; i < enemiesToProduce; ++i)
         {
             GameObject temp = Instantiate(BaseCopy);
             temp.transform.position = Relocate();
-            temp.SetActive(active);
-            temp.GetComponent<Monster>().ReconfigureType();
+            temp.SetActive(false);
             EnemyPool.Add(temp);
         }
     }

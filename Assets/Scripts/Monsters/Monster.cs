@@ -4,50 +4,57 @@ using UnityEngine;
 
 public class Monster : MonoBehaviour, IDamageable
 {
-    public float InitialHealth;
-    public float InitialSpeed;
-    public float Health;
-    public float Speed;
-    float DamageMultiplier;
+    [SerializeField] private float initialHealth;
+    [SerializeField] private float initialSpeed;
+    [SerializeField] private float health;
+    [SerializeField] private float speed;
+    [SerializeField] private float damageMultiplier;
+    [SerializeField] private float maxPoint;
+    
+    [SerializeField] private Type.ElementalType MyType;
+    [SerializeField] private float Damage;
+
+    [SerializeField] private bool isTargeted;
+    
+    public bool IsTargeted
+    {
+        get
+        {
+            return isTargeted;
+        }
+        set
+        {
+            isTargeted = value;
+        }
+    }
 
     Color InitialColor;
-
-    public bool isTargeted;
-
-    [SerializeField]
-    private Type.ElementalType MyType;
-
-    [SerializeField]
-    private float Damage;
-
-
-    public float MaxPoint;
 
     private void Start()
     {
         Damage = 5f;
-        MaxPoint = GameObject.FindGameObjectWithTag("Shield").transform.position.y;
+        maxPoint = GameObject.FindGameObjectWithTag("Shield").transform.position.y;
 
         
-        InitialHealth = 20;
-        Health = InitialHealth;
-        Speed = InitialSpeed;
+        initialHealth = 20;
+        health = initialHealth;
+        speed = initialSpeed;
 
         ReconfigureType();
     }
 
     private void OnEnable()
     {
-        Health = InitialHealth;
+        health = initialHealth;
         ResetColor();
     }
 
     private void Update()
     {
-        transform.Translate(Vector2.down * Time.deltaTime * Speed);
+        transform.Translate(Vector2.down * Time.deltaTime * speed);
 
 
-        if(transform.position.y < MaxPoint)
+        if(transform.position.y < maxPoint)
         {
             GameObject.FindObjectOfType<Shield>().ApplyDamage(Damage);
             gameObject.SetActive(false);
@@ -55,28 +62,34 @@ public class Monster : MonoBehaviour, IDamageable
         }
     }
 
+
     public Type.ElementalType GetElement()
     {
         return MyType;
     }
 
+    public void SetElement(Type.ElementalType elem)
+    {
+        MyType = elem;
+    }
+
 
     public void ApplyDamage(float dam)
     {
-        Health -= dam;
+        health -= dam;
 
-        if(Health <= 0)
+        if(health <= 0)
         {
             //MonsterPool.AddToInactivePool(gameObject);
             print("got hit");
             gameObject.SetActive(false);
-            ReconfigureType();
+            //ReconfigureType();
         }
     }
 
     public void ReconfigureType()
     {
-        MyType = (Type.ElementalType)Random.Range(0, 3);
+        //MyType = (Type.ElementalType)Random.Range(0, 3);
         ResetColor();
 
     }

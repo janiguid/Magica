@@ -95,14 +95,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4786924e746c2a44967a9b3f2bcbef6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InitialHealth: 0
-  InitialSpeed: 1
-  Health: 0
-  Speed: 1
-  isTargeted: 0
+  initialHealth: 20
+  initialSpeed: 1
+  health: 0
+  speed: 1
+  damageMultiplier: 0
+  maxPoint: 0
   MyType: 3
   Damage: 0
-  MaxPoint: 0
+  isTargeted: 0
 --- !u!61 &5491760397345589721
 BoxCollider2D:
   m_ObjectHideFlags: 0
