@@ -10,6 +10,8 @@ public class SO_LevelConfig : ScriptableObject
     [SerializeField] private int waterMonstersCount;
     [SerializeField] private int grassMonstersCount;
 
+    [SerializeField] private int[] orderOfMonsters;
+
     public int TotalMonsterCount
     {
         get
@@ -56,5 +58,10 @@ public class SO_LevelConfig : ScriptableObject
         {
             grassMonstersCount = value;
         }
+    }
+
+    public int[] GetOrdering()
+    {
+        return orderOfMonsters;
     }
 }

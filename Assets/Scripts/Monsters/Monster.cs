@@ -10,9 +10,9 @@ public class Monster : MonoBehaviour, IDamageable
     [SerializeField] private float speed;
     [SerializeField] private float damageMultiplier;
     [SerializeField] private float maxPoint;
-    
+    [SerializeField] private SpriteRenderer Sprite;
     [SerializeField] private Type.ElementalType MyType;
-    [SerializeField] private float Damage;
+    [SerializeField] private float damage;
 
     [SerializeField] private bool isTargeted;
     
@@ -30,11 +30,16 @@ public class Monster : MonoBehaviour, IDamageable
 
     Color InitialColor;
 
+    private void Awake()
+    {
+        Sprite = gameObject.GetComponent<SpriteRenderer>();
+    }
+
     private void Start()
     {
-        Damage = 5f;
+        damage = 5f;
         maxPoint = GameObject.FindGameObjectWithTag("Shield").transform.position.y;
-
+        
         
         initialHealth = 20;
         health = initialHealth;
@@ -45,8 +50,8 @@ public class Monster : MonoBehaviour, IDamageable
 
     private void OnEnable()
     {
+        Sprite = gameObject.GetComponent<SpriteRenderer>();
         health = initialHealth;
-        ResetColor();
     }
 
     private void Update()
@@ -56,7 +61,7 @@ public class Monster : MonoBehaviour, IDamageable
 
         if(transform.position.y < maxPoint)
         {
-            GameObject.FindObjectOfType<Shield>().ApplyDamage(Damage);
+            GameObject.FindObjectOfType<Shield>().ApplyDamage(damage);
             gameObject.SetActive(false);
             
         }
@@ -66,6 +71,12 @@ public class Monster : MonoBehaviour, IDamageable
     public Type.ElementalType GetElement()
     {
         return MyType;
+    }
+
+    public void ConfigureMonster(Type.ElementalType elemental, Sprite sprite)
+    {
+        MyType = elemental;
+        Sprite.sprite = sprite;
     }
 
     public void SetElement(Type.ElementalType elem)
@@ -90,29 +101,8 @@ public class Monster : MonoBehaviour, IDamageable
     public void ReconfigureType()
     {
         //MyType = (Type.ElementalType)Random.Range(0, 3);
-        ResetColor();
 
     }
 
-    public void ResetColor()
-    {
-        if (MyType == Type.ElementalType.Grass)
-        {
-            InitialColor = Color.green;
-        }
-        else if (MyType == Type.ElementalType.Fire)
-        {
-            InitialColor = Color.red;
-        }
-        else if (MyType == Type.ElementalType.Water)
-        {
-            InitialColor = Color.blue;
-        }
-        else
-        {
-            InitialColor = Color.white;
-        }
 
-        gameObject.GetComponent<SpriteRenderer>().color = InitialColor;
-    }
 }

@@ -4,25 +4,20 @@ using UnityEngine;
 
 public class MonsterQueue : MonoBehaviour
 {
-    [SerializeField] private SO_LevelConfig config;
-    [SerializeField] private Queue<GameObject> EnemyQueue;
-    [SerializeField] private GameObject BaseCopy;
-    [SerializeField] private int inactiveSpawn;
-    [SerializeField] private int activeSpawn;
+    [SerializeField] private MonsterPool monsterPool;
     [SerializeField] private float timerBeforeNextSpawn;
     [SerializeField] private float timer;
-
-
+    [SerializeField] private SO_LevelConfig lvlConfig;
+    [SerializeField] private int[] orderOfMonsters;
+    [SerializeField] private int monsterIndexCounter;
 
     // Start is called before the first frame update
     void Start()
     {
         timer = timerBeforeNextSpawn;
-        EnemyQueue = new Queue<GameObject>();
+        monsterPool = FindObjectOfType<MonsterPool>();
 
-        Produce(config.FireMonsterCount, Type.ElementalType.Fire);
-        Produce(config.WaterMonsterCount, Type.ElementalType.Water);
-        Produce(config.GrassMonsterCount, Type.ElementalType.Grass);
+        orderOfMonsters = lvlConfig.GetOrdering();
 
         BeginLevel();
     }
@@ -37,26 +32,31 @@ public class MonsterQueue : MonoBehaviour
         else
         {
             timer = timerBeforeNextSpawn;
-            PopFromQueue();
+            SpawnMonster();
         }
     }
 
-    void PopFromQueue()
+    void SpawnMonster()
     {
-        if (EnemyQueue.Count == 0)
+        monsterIndexCounter++;
+        if (monsterIndexCounter >= orderOfMonsters.Length)
         {
             print("game done");
+
             return;
         }
-        EnemyQueue.Dequeue().SetActive(true);
+
+        GameObject Fresh = monsterPool.FindFromPool((Type.ElementalType)orderOfMonsters[monsterIndexCounter]);
+        Fresh.transform.position = GetNewPosition();
+        Fresh.SetActive(true);
     }
 
     void BeginLevel()
     {
-        PopFromQueue();
+        SpawnMonster();
     }
 
-    Vector2 Relocate()
+    Vector2 GetNewPosition()
     {
         Vector2 result;
         int randomSpot = Screen.width / 4;
@@ -66,20 +66,5 @@ public class MonsterQueue : MonoBehaviour
         result = Camera.main.ScreenToWorldPoint(new Vector2(randomSpot, Screen.height + 100));
         return result;
     }
-
-
-
-    void Produce(int enemiesToProduce, Type.ElementalType type)
-    {
-        for (int i = 0; i < enemiesToProduce; ++i)
-        {
-            GameObject temp = Instantiate(BaseCopy);
-            temp.transform.position = Relocate();
-            temp.SetActive(false);
-            temp.GetComponent<Monster>().SetElement(type);
-            EnemyQueue.Enqueue(temp);
-        }
-    }
-
 
 }

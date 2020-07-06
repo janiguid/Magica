@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: LVL_1
   m_EditorClassIdentifier: 
   totalMonsterCount: 0
-  fireMonstersCount: 0
+  fireMonstersCount: 5
   waterMonstersCount: 5
-  grassMonstersCount: 0
+  grassMonstersCount: 5
+  orderOfMonsters: 01000000010000000100000001000000010000000100000001000000010000000100000001000000

@@ -59,7 +59,6 @@ public class Projectile : MonoBehaviour
 
     public void ResetPosition()
     {
-        print("reset pos");
         gameObject.SetActive(false);
         transform.position = OriginalPosition;
         Target = Vector3.zero;
