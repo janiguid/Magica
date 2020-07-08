@@ -333,9 +333,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsterPool: {fileID: 0}
-  timerBeforeNextSpawn: 2
+  timerBeforeNextSpawn: 1
   timer: 0
-  lvlConfig: {fileID: 11400000, guid: 1de285d3300b23a4cabb12888f363638, type: 2}
+  lvlConfig: {fileID: 11400000, guid: 94aea6df4099e4b44b1dd52e335ac931, type: 2}
   orderOfMonsters: 
   monsterIndexCounter: 0
 --- !u!1 &453235841
@@ -1227,7 +1227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 097443ce40fbe4f40a27f5106063994f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  config: {fileID: 11400000, guid: 1de285d3300b23a4cabb12888f363638, type: 2}
+  config: {fileID: 11400000, guid: 94aea6df4099e4b44b1dd52e335ac931, type: 2}
   EnemyPool: []
   BaseCopy: {fileID: 5491760397345589725, guid: 64a6b6a0a008adf41bb729ec7cdf6ad2,
     type: 3}

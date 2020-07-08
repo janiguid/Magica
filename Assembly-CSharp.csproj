@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\Monsters\MonsterQueue.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scripts\Player\SO_PlayerStats.cs" />
+    <Compile Include="Assets\Scripts\UI\MapElement.cs" />
     <Compile Include="Assets\Scripts\UI\MenuElement.cs" />
     <Compile Include="Assets\Scripts\Utility\MonsterDictionary.cs" />
     <Compile Include="Assets\Scripts\Utility\MonsterPool.cs" />

@@ -64,4 +64,9 @@ public class SO_LevelConfig : ScriptableObject
     {
         return orderOfMonsters;
     }
+
+    public void SetOrdering(int[] order)
+    {
+        orderOfMonsters = order;
+    }
 }
