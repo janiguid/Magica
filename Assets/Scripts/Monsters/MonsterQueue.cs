@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MonsterQueue : MonoBehaviour
 {
@@ -41,14 +42,20 @@ public class MonsterQueue : MonoBehaviour
         monsterIndexCounter++;
         if (monsterIndexCounter >= orderOfMonsters.Length)
         {
-            print("game done");
+            if (monsterPool.IsEmpty())
+            {
+                SceneManager.LoadScene(1);
+                return;
+            }
 
-            return;
+        }
+        else
+        {
+            GameObject Fresh = monsterPool.FindFromPool((Type.ElementalType)orderOfMonsters[monsterIndexCounter]);
+            Fresh.transform.position = GetNewPosition();
+            Fresh.SetActive(true);
         }
 
-        GameObject Fresh = monsterPool.FindFromPool((Type.ElementalType)orderOfMonsters[monsterIndexCounter]);
-        Fresh.transform.position = GetNewPosition();
-        Fresh.SetActive(true);
     }
 
     void BeginLevel()

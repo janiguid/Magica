@@ -8,17 +8,24 @@ public class MonsterPool : MonoBehaviour
     [SerializeField] private List<GameObject> EnemyPool;
     [SerializeField] private GameObject BaseCopy;
     [SerializeField] private Sprite[] SpriteArray;
+    [SerializeField] private EffectsHandler MonsterEffects;
 
 
+    private void Awake()
+    {
+        MonsterEffects = FindObjectOfType<EffectsHandler>();
+    }
 
     // Start is called before the first frame update
     void Start()
     {
         EnemyPool = new List<GameObject>();
-
+        
         Produce(config.FireMonsterCount, Type.ElementalType.Fire);
         Produce(config.WaterMonsterCount, Type.ElementalType.Water);
         Produce(config.GrassMonsterCount, Type.ElementalType.Grass);
+
+        
 
     }
 
@@ -50,9 +57,29 @@ public class MonsterPool : MonoBehaviour
     {
         GameObject temp = Instantiate(BaseCopy);
         temp.SetActive(false);
-        temp.GetComponent<Monster>().ConfigureMonster(type, SpriteArray[(int)type]);
+        if ((int)type > 3)
+        {
+            print("TRYING TO SPAWN ILLEGAL MOSNTER");
+            type = (Type.ElementalType)Random.Range(0f, 2f);
+        }
+
+        if (MonsterEffects) print("have mosnter");
+        temp.GetComponent<Monster>().ConfigureMonster(type, SpriteArray[(int)type], ref MonsterEffects);
         EnemyPool.Add(temp);
         return temp;
+    }
+
+    public bool IsEmpty()
+    {
+        for(int i = 0; i < EnemyPool.Count; ++i)
+        {
+            if(EnemyPool[i].activeSelf == true)
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 }
 

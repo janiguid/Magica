@@ -1,11 +1,15 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - MapElement
     - MenuElement
     - Monster
     - MonsterPool
+    - MonsterQueue
+    - PanelButton
     - Player
     - Projectile
+    - SO_LevelConfig
     - SO_PlayerStats
     - Shield
     - SpellSound
@@ -88,15 +92,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12288}
     - Class: 114
-      Script: {instanceID: 12624}
+      Script: {instanceID: 12626}
     - Class: 114
-      Script: {instanceID: 12726}
+      Script: {instanceID: 12728}
     - Class: 114
-      Script: {instanceID: 12954}
+      Script: {instanceID: 12922}
     - Class: 114
-      Script: {instanceID: 13048}
+      Script: {instanceID: 12958}
     - Class: 114
-      Script: {instanceID: 13116}
+      Script: {instanceID: 13052}
+    - Class: 114
+      Script: {instanceID: 13120}
+    - Class: 114
+      Script: {instanceID: 13176}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -143,9 +151,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12208}
     - Class: 114
-      Script: {instanceID: 12726}
+      Script: {instanceID: 12728}
     - Class: 114
-      Script: {instanceID: 13116}
+      Script: {instanceID: 13120}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -153,6 +161,65 @@ ScriptsOnlyBuild:
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/Map.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 11152}
+    - Class: 114
+      Script: {instanceID: 11328}
+    - Class: 114
+      Script: {instanceID: 11368}
+    - Class: 114
+      Script: {instanceID: 11792}
+    - Class: 114
+      Script: {instanceID: 11914}
+    - Class: 114
+      Script: {instanceID: 12208}
+    - Class: 114
+      Script: {instanceID: 12600}
+    - Class: 114
+      Script: {instanceID: 12728}
+    - Class: 114
+      Script: {instanceID: 13120}
+    - Class: 114
+      Script: {instanceID: 13176}
+    - Class: 114
+      Script: {instanceID: 15116}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
       Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}
@@ -345,7 +412,7 @@ ScriptsOnlyBuild:
     className: Mask
   - hash:
       serializedVersion: 2
-      Hash: f1efbddce6174759b2d1c4dd165b4832
+      Hash: 6fdd1e86fa67f899440719f794a17ff1
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Monster
@@ -525,6 +592,12 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
+      Hash: 951ced951a21542925d4da210120adde
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MapElement
+  - hash:
+      serializedVersion: 2
       Hash: 2a59f1d33e554ec3a11bc6208cd0d0e6
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -567,6 +640,12 @@ ScriptsOnlyBuild:
     className: TMP_StyleSheet
   - hash:
       serializedVersion: 2
+      Hash: 920b43df5a0018604f5efaf33b592794
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MonsterQueue
+  - hash:
+      serializedVersion: 2
       Hash: e89a61064e823b7e912c76b8d8e0eb69
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -597,7 +676,7 @@ ScriptsOnlyBuild:
     className: BaseInput
   - hash:
       serializedVersion: 2
-      Hash: 58e33816e4480758c629650eea01cd3d
+      Hash: bf004a38d9630791e854a6b697b2f2cd
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MonsterPool
@@ -669,12 +748,25 @@ ScriptsOnlyBuild:
     className: ToggleGroup
   - hash:
       serializedVersion: 2
+      Hash: d644634e94bf23020cfe417e17a520d0
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SO_LevelConfig
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 235a1e8275c5d1ab2a1c0f017d90e1b5
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PanelButton
   platform: 13
   scenePathNames:
   - Assets/Scenes/Game.unity
   - Assets/Scenes/MainMenu.unity
+  - Assets/Scenes/Map.unity
   playerPath: C:/Users/jessieaniguid/Desktop/GitVersions/Magica/MagicaTestBuild.apk
