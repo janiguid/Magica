@@ -44,7 +44,7 @@ public class MonsterQueue : MonoBehaviour
         {
             if (monsterPool.IsEmpty())
             {
-                SceneManager.LoadScene(1);
+                SceneManager.LoadScene(2);
                 return;
             }
 

@@ -48,7 +48,7 @@ MonoBehaviour:
   BaseCopy: {fileID: 5491760397345589725, guid: 64a6b6a0a008adf41bb729ec7cdf6ad2,
     type: 3}
   SpriteArray:
-  - {fileID: 21300000, guid: edb814ebc3c7c8a49b71dcfa2d15332b, type: 3}
-  - {fileID: 21300000, guid: 162ece8490fb3d14cb883e13eece53cd, type: 3}
-  - {fileID: 21300000, guid: ebc01c9be57fc4d4a9653a89927cd3f9, type: 3}
+  - {fileID: 21300000, guid: cbd222483eea55441b24f9016f75533f, type: 3}
+  - {fileID: 21300000, guid: 52153d705b745d242b65c9dce55afb4a, type: 3}
+  - {fileID: 21300000, guid: cb27e416463abb84891e38799e504483, type: 3}
   MonsterEffects: {fileID: 0}
