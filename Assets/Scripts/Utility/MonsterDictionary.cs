@@ -36,6 +36,17 @@ public class MonsterDictionary
 
         Pair WW = new Pair(Type.ElementalType.Water, Type.ElementalType.Water);
         MultiplierChart.Add(WW, 1f);
+
+
+        //Pure Monsters
+        Pair WPF = new Pair(Type.ElementalType.Water, Type.ElementalType.PureFire);
+        MultiplierChart.Add(WPF, 2);
+
+        Pair GPW = new Pair(Type.ElementalType.Grass, Type.ElementalType.PureWater);
+        MultiplierChart.Add(GPW, 2);
+
+        Pair FPG = new Pair(Type.ElementalType.Fire, Type.ElementalType.PureGrass);
+        MultiplierChart.Add(FPG, 2);
     }
 
     public float GetMultiplier(Type.ElementalType caster, Type.ElementalType target)

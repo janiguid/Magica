@@ -21,7 +21,7 @@ public class EffectsHandler : MonoBehaviour
 
     public void PlayEffects()
     {
-        //MyParticles.Play();
+        MyParticles.Play();
     }
 
     public void PlayAudio()

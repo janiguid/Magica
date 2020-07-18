@@ -21,11 +21,12 @@ public class MonsterPool : MonoBehaviour
     {
         EnemyPool = new List<GameObject>();
         
-        Produce(config.FireMonsterCount, Type.ElementalType.Fire);
-        Produce(config.WaterMonsterCount, Type.ElementalType.Water);
-        Produce(config.GrassMonsterCount, Type.ElementalType.Grass);
-
-        
+        //Produce(config.FireMonsterCount, Type.ElementalType.Fire);
+        //Produce(config.WaterMonsterCount, Type.ElementalType.Water);
+        //Produce(config.GrassMonsterCount, Type.ElementalType.Grass);
+        //Produce(config.FireMonsterCount, Type.ElementalType.PureFire);
+        //Produce(config.WaterMonsterCount, Type.ElementalType.PureWater);
+        //Produce(config.GrassMonsterCount, Type.ElementalType.PureGrass);
 
     }
 
@@ -36,6 +37,7 @@ public class MonsterPool : MonoBehaviour
             if (EnemyPool[i].gameObject.activeSelf == true) continue;
             if(EnemyPool[i].GetComponent<Monster>().GetElement() == type)
             {
+                print("Extracted from pool");
                 return EnemyPool[i];
             }
         }
@@ -57,13 +59,21 @@ public class MonsterPool : MonoBehaviour
     {
         GameObject temp = Instantiate(BaseCopy);
         temp.SetActive(false);
-        if ((int)type > 3)
+        if ((int)type > 7)
         {
             print("TRYING TO SPAWN ILLEGAL MOSNTER");
             type = (Type.ElementalType)Random.Range(0f, 2f);
         }
 
-        if (MonsterEffects) print("have mosnter");
+        if (MonsterEffects) print("have monster effects");
+
+        if((int)type > SpriteArray.Length - 1)
+        {
+            print("Missing sprite. Defaulting to water");
+            temp.GetComponent<Monster>().ConfigureMonster(type, SpriteArray[(int)Type.ElementalType.Water], ref MonsterEffects);
+            EnemyPool.Add(temp);
+            return temp;
+        }
         temp.GetComponent<Monster>().ConfigureMonster(type, SpriteArray[(int)type], ref MonsterEffects);
         EnemyPool.Add(temp);
         return temp;

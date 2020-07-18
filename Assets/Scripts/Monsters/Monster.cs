@@ -10,7 +10,6 @@ public class Monster : MonoBehaviour, IDamageable
     [SerializeField] private Type.ElementalType MyType;
     [SerializeField] private float damage;
     [SerializeField] private bool isTargeted;
-    [SerializeField] private EffectsHandler EffectsHandler;
     
     
     public bool IsTargeted
@@ -42,7 +41,6 @@ public class Monster : MonoBehaviour, IDamageable
     {
         Sprite = gameObject.GetComponent<SpriteRenderer>();
         health = initialHealth;
-
     }
 
     public Type.ElementalType GetElement()
@@ -55,8 +53,6 @@ public class Monster : MonoBehaviour, IDamageable
         MyType = elemental;
         Sprite.sprite = sprite;
 
-        if (EffectsHandler == null) print("fx handler nto being passed");
-        EffectsHandler = fxHandler;
     }
 
     public void SetElement(Type.ElementalType elem)
@@ -69,15 +65,7 @@ public class Monster : MonoBehaviour, IDamageable
     {
         health -= dam;
 
-        if (EffectsHandler)
-        {
-            EffectsHandler.PlayAudio();
-            EffectsHandler.PlayEffects();
-        }
-        else
-        {
-            print("missing audio");
-        }
+
         if (health <= 0)
         {
  
