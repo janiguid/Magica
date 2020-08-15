@@ -26,7 +26,7 @@ public class Player : Spell
     }
     private void Update()
     {
-        if (ButtonCooldown > 0) ButtonCooldown -= Time.deltaTime;
+        //if (ButtonCooldown > 0) ButtonCooldown -= Time.deltaTime;
     }
 
     public override void InitializeElement()
@@ -51,7 +51,7 @@ public class Player : Spell
         }
 
 
-        ButtonCooldown = InitialButtonCooldown;
+        //ButtonCooldown = InitialButtonCooldown;
         MyProjectile.Activate(TargetLocator.GetClosestMonster().transform.position, element);
         element = Type.ElementalType.Neutral;
 

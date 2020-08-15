@@ -21,13 +21,6 @@ public class MonsterPool : MonoBehaviour
     {
         EnemyPool = new List<GameObject>();
         
-        //Produce(config.FireMonsterCount, Type.ElementalType.Fire);
-        //Produce(config.WaterMonsterCount, Type.ElementalType.Water);
-        //Produce(config.GrassMonsterCount, Type.ElementalType.Grass);
-        //Produce(config.FireMonsterCount, Type.ElementalType.PureFire);
-        //Produce(config.WaterMonsterCount, Type.ElementalType.PureWater);
-        //Produce(config.GrassMonsterCount, Type.ElementalType.PureGrass);
-
     }
 
     public GameObject FindFromPool(Type.ElementalType type)

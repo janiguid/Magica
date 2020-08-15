@@ -1,15 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Shield : MonoBehaviour, IDamageable
 {
-    [SerializeField]
-    private SO_PlayerStats MyStats;
+    [SerializeField] private SO_PlayerStats MyStats;
+    [SerializeField] private GameObject gameOverButton;
 
-    [SerializeField]
-    private float MyHealth;
+    [SerializeField] private float MyHealth;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,17 +23,17 @@ public class Shield : MonoBehaviour, IDamageable
 
         if (MyHealth <= 0)
         {
-            //MonsterPool.AddToInactivePool(gameObject);
-            SceneManager.LoadScene(1);
-            print("GAME OVER NOOB");
+            if (gameOverButton)
+            {
+                gameOverButton.SetActive(true);
+                gameOverButton.GetComponentInChildren<Text>().text = "Failed";
+            }
+            else
+            {
+                SceneManager.LoadScene(1);
+            }
+            
         }
     }
 
-
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

@@ -11,7 +11,7 @@ public class MonsterQueue : MonoBehaviour
     [SerializeField] private SO_LevelConfig lvlConfig;
     [SerializeField] private int[] orderOfMonsters;
     [SerializeField] private int monsterIndexCounter;
-
+    [SerializeField] private GameObject gameOverButton; 
     // Start is called before the first frame update
     void Start()
     {
@@ -44,7 +44,7 @@ public class MonsterQueue : MonoBehaviour
         {
             if (monsterPool.IsEmpty())
             {
-                SceneManager.LoadScene(2);
+                gameOverButton.SetActive(true);
                 return;
             }
 
