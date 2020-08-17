@@ -354,6 +354,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   element: 2
+  player: {fileID: 0}
 --- !u!114 &157246981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -783,6 +784,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   element: 2
+  player: {fileID: 0}
 --- !u!114 &495469645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -997,11 +999,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   element: 0
-  InitialButtonCooldown: 1
-  ButtonCooldown: 0
-  ProjectilePrefab: {fileID: 4496144008915863065, guid: 17dd754bbda74f04e939228e9683bb53,
+  player: {fileID: 0}
+  projectilePrefab: {fileID: 4496144008915863065, guid: 17dd754bbda74f04e939228e9683bb53,
     type: 3}
-  MyEffectsHandler: {fileID: 1717002319}
+  myEffectsHandler: {fileID: 1717002319}
+  maxSpellLength: 0
 --- !u!114 &669342312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1429,6 +1431,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   element: 1
+  player: {fileID: 0}
 --- !u!114 &1214784709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1709,6 +1712,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Monster Pool
       objectReference: {fileID: 0}
+    - target: {fileID: 603174490380087226, guid: a1c018e4822d44445a56b1bfdf34becb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 603174490380087228, guid: a1c018e4822d44445a56b1bfdf34becb,
         type: 3}
       propertyPath: SpriteArray.Array.size
@@ -1939,6 +1947,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MonsterQueue
+      objectReference: {fileID: 0}
+    - target: {fileID: 4107442546324210631, guid: 495bf9717ce02654da74a376a5e4964a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 495bf9717ce02654da74a376a5e4964a, type: 3}

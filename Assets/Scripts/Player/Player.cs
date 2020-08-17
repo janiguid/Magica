@@ -4,29 +4,35 @@ using UnityEngine;
 
 public class Player : Spell
 {
-    [SerializeField] private float InitialButtonCooldown;
-    [SerializeField] private float ButtonCooldown;
-    [SerializeField] private GameObject ProjectilePrefab;
-    [SerializeField] private EffectsHandler MyEffectsHandler;
+    [Header ("Cosmetics")]
+    [SerializeField] private GameObject projectilePrefab;
+    [SerializeField] private EffectsHandler myEffectsHandler;
 
-    private Targeter TargetLocator;
-    private GameObject Blast;
-    private Projectile MyProjectile;
+    [Header ("Spell Mechanics")]
+    [SerializeField] private int maxSpellLength;
+
+
+    private string currentSpell;
+    private SpellMixer spellMixer;
+    private Targeter targetLocator;
+    private GameObject blast;
+    private Projectile myProjectile;
     private void Awake()
     {
-        TargetLocator = GameObject.FindObjectOfType<Targeter>();
-        Blast = Instantiate(ProjectilePrefab);
-        MyProjectile = Blast.GetComponent<Projectile>();
-        MyProjectile.ResetPosition();
+        targetLocator = GameObject.FindObjectOfType<Targeter>();
+        blast = Instantiate(projectilePrefab);
+        myProjectile = blast.GetComponent<Projectile>();
+        myProjectile.ResetPosition();
     }
 
 
     private void Start()
     {
+        if (maxSpellLength <= 0) maxSpellLength = 3;
+        spellMixer = new SpellMixer();
     }
     private void Update()
     {
-        //if (ButtonCooldown > 0) ButtonCooldown -= Time.deltaTime;
     }
 
     public override void InitializeElement()
@@ -34,6 +40,40 @@ public class Player : Spell
 
         //print("Successfully set to neutral");
         element = Type.ElementalType.Neutral;
+    }
+
+    public void AddToSpellStack(Type.ElementalType type)
+    {
+        
+        currentSpell += spellMixer.GetRuneType(type);
+        print(currentSpell);
+
+        if (currentSpell.Length >= maxSpellLength)
+        {
+            FinalizeSpell();
+        }
+    }
+
+    private void FinalizeSpell()
+    {
+        if (currentSpell.Length != maxSpellLength)
+        {
+            
+            print("Length of spell isn't correct. ERROR");
+        }
+
+        Type.ElementalType temp = spellMixer.MixSpells(currentSpell);
+
+        if(temp == Type.ElementalType.Neutral)
+        {
+            print("Unknown spell was used. Resetting spells");
+        }
+        else
+        {
+            SetElement(temp);
+        }
+
+        currentSpell = "";
     }
 
     public void SetElement(Type.ElementalType elem)
@@ -52,13 +92,13 @@ public class Player : Spell
 
 
         //ButtonCooldown = InitialButtonCooldown;
-        MyProjectile.Activate(TargetLocator.GetClosestMonster().transform.position, element);
+        myProjectile.Activate(targetLocator.GetClosestMonster().transform.position, element);
         element = Type.ElementalType.Neutral;
 
-        if (MyEffectsHandler)
+        if (myEffectsHandler)
         {
-            MyEffectsHandler.PlayAudio();
-            MyEffectsHandler.PlayEffects();
+            myEffectsHandler.PlayAudio();
+            myEffectsHandler.PlayEffects();
         }
         
     }

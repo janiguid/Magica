@@ -6,13 +6,13 @@ public abstract class Spell:MonoBehaviour
 {
 
     [SerializeField] protected Type.ElementalType element;
-
+    [SerializeField] protected Player player;
 
 
     private void Start()
     {
 
-
+        player = GameObject.FindObjectOfType<Player>();
         InitializeElement();
     }
 
@@ -22,7 +22,7 @@ public abstract class Spell:MonoBehaviour
     }
 
     public virtual void Trigger() {
-        GameObject.FindObjectOfType<Player>().SetElement(element);           
+       player.AddToSpellStack(element);           
     }
 
 

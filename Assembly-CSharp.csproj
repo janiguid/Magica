@@ -79,6 +79,7 @@
     <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scripts\Player\SO_PlayerStats.cs" />
     <Compile Include="Assets\Scripts\SpellButtons\Spell.cs" />
+    <Compile Include="Assets\Scripts\SpellButtons\SpellMixer.cs" />
     <Compile Include="Assets\Scripts\SpellButtons\SpellSound.cs" />
     <Compile Include="Assets\Scripts\SpellButtons\Spell_Fire.cs" />
     <Compile Include="Assets\Scripts\SpellButtons\Spell_Grass.cs" />
