@@ -89,11 +89,13 @@
     <Compile Include="Assets\Scripts\UI\MenuElement.cs" />
     <Compile Include="Assets\Scripts\UI\PanelButton.cs" />
     <Compile Include="Assets\Scripts\Utility\EffectsHandler.cs" />
+    <Compile Include="Assets\Scripts\Utility\FrameRateHandler.cs" />
     <Compile Include="Assets\Scripts\Utility\MonsterDictionary.cs" />
     <Compile Include="Assets\Scripts\Utility\MonsterPool.cs" />
     <Compile Include="Assets\Scripts\Utility\Projectile.cs" />
     <Compile Include="Assets\Scripts\Utility\SO_LevelConfig.cs" />
     <Compile Include="Assets\Scripts\Utility\Shield.cs" />
+    <Compile Include="Assets\Scripts\Utility\SpellVisualizer.cs" />
     <Compile Include="Assets\Scripts\Utility\Targeter.cs" />
     <Compile Include="Assets\Scripts\Utility\Type.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />

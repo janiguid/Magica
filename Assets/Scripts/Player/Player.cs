@@ -17,6 +17,7 @@ public class Player : Spell
     private Targeter targetLocator;
     private GameObject blast;
     private Projectile myProjectile;
+    private SpellVisualizer visualizer;
     private void Awake()
     {
         targetLocator = GameObject.FindObjectOfType<Targeter>();
@@ -28,11 +29,11 @@ public class Player : Spell
 
     private void Start()
     {
+        if (visualizer == null) visualizer = FindObjectOfType<SpellVisualizer>();
         if (maxSpellLength <= 0) maxSpellLength = 3;
         spellMixer = new SpellMixer();
-    }
-    private void Update()
-    {
+        SetElement(Type.ElementalType.Neutral);
+        currentSpell = "";
     }
 
     public override void InitializeElement()
@@ -44,8 +45,18 @@ public class Player : Spell
 
     public void AddToSpellStack(Type.ElementalType type)
     {
-        
+        if (currentSpell.Length == maxSpellLength) return;
         currentSpell += spellMixer.GetRuneType(type);
+
+        if (visualizer)
+        {
+            visualizer.RefreshUI(type);
+        }
+        else
+        {
+            print("Missing visualizer!");
+        }
+        
         print(currentSpell);
 
         if (currentSpell.Length >= maxSpellLength)
@@ -67,12 +78,20 @@ public class Player : Spell
         if(temp == Type.ElementalType.Neutral)
         {
             print("Unknown spell was used. Resetting spells");
+            ResetSpells();
         }
         else
         {
             SetElement(temp);
         }
 
+        
+        
+    }
+
+    void ResetSpells()
+    {
+        visualizer.EmptySlots();
         currentSpell = "";
     }
 
@@ -91,7 +110,7 @@ public class Player : Spell
         }
 
 
-        //ButtonCooldown = InitialButtonCooldown;
+        ResetSpells();
         myProjectile.Activate(targetLocator.GetClosestMonster().transform.position, element);
         element = Type.ElementalType.Neutral;
 

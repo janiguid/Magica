@@ -15,6 +15,8 @@ public class Targeter : MonoBehaviour
     {
         MaxPos = GameObject.FindObjectOfType<Shield>().transform.position;
         MaxPos.y += 0.1f;
+
+        
         InitialMin = GameObject.FindObjectOfType<MonsterQueue>().transform.position;
         MinPos = InitialMin;
     }
