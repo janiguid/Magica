@@ -1,0 +1,6 @@
+TO ADD NEW MONSTER:
+
+1) Add type to TYPE class
+2) Add type to SPELLMIXER class
+3) Add type to MONSTERDICTIONARY class
+4) Add SPRITE to SPRITE ARRAY of MONSTER POOL instance

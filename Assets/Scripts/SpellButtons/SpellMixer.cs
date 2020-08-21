@@ -12,13 +12,17 @@ public class SpellMixer
         spellBook.Add("www", Type.ElementalType.Water);
         spellBook.Add("ggg", Type.ElementalType.Grass);
         spellBook.Add("ggf", Type.ElementalType.GGF);
+        spellBook.Add("ggw", Type.ElementalType.GGW);
         spellBook.Add("ffg", Type.ElementalType.FFG);
+        spellBook.Add("wwf", Type.ElementalType.WWF);
+
     }
 
     public Type.ElementalType MixSpells(string input)
     {
         if (spellBook.ContainsKey(input) == false)
         {
+            
             return Type.ElementalType.Neutral;
         }
         return spellBook[input];

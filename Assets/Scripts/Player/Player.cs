@@ -77,7 +77,7 @@ public class Player : Spell
 
         if(temp == Type.ElementalType.Neutral)
         {
-            print("Unknown spell was used. Resetting spells");
+            print("ERROR: Spell isn't inside Spell Mixer");
             ResetSpells();
         }
         else

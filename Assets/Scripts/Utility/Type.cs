@@ -13,7 +13,10 @@ public class Type : MonoBehaviour
         PureFire,
         PureWater,
         GGF,
+        FFW,
+        GGW,
         FFG,
+        WWF,
         Neutral
 
     };
