@@ -411,7 +411,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a33bec3398011eb42a6cdf79815bf18e, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.31
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -894,7 +894,7 @@ GameObject:
   - component: {fileID: 608036284}
   - component: {fileID: 608036283}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Rune Indicators
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1046,7 +1046,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &669342309
 GameObject:
@@ -1209,7 +1209,7 @@ GameObject:
   - component: {fileID: 805736050}
   - component: {fileID: 805736049}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Button Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1292,7 +1292,7 @@ RectTransform:
   - {fileID: 669342310}
   - {fileID: 2061747890}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1411,7 +1411,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 350, y: -487}
+  m_AnchoredPosition: {x: 350, y: -522}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1090661142
@@ -1494,7 +1494,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1129678041
 MonoBehaviour:
@@ -1550,7 +1550,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -308, y: -487}
+  m_AnchoredPosition: {x: -308, y: -522}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1212828043
@@ -1847,7 +1847,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 21, y: -487}
+  m_AnchoredPosition: {x: 21, y: -522}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1667462311
@@ -1941,7 +1941,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2061747889
 GameObject:
@@ -2108,7 +2108,7 @@ PrefabInstance:
     - target: {fileID: 603174490380087228, guid: a1c018e4822d44445a56b1bfdf34becb,
         type: 3}
       propertyPath: SpriteArray.Array.size
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 603174490380087228, guid: a1c018e4822d44445a56b1bfdf34becb,
         type: 3}
@@ -2127,6 +2127,18 @@ PrefabInstance:
       propertyPath: SpriteArray.Array.data[5]
       value: 
       objectReference: {fileID: 21300000, guid: b83aa5fcf75db4e4b85337e0e296ca1b,
+        type: 3}
+    - target: {fileID: 603174490380087228, guid: a1c018e4822d44445a56b1bfdf34becb,
+        type: 3}
+      propertyPath: SpriteArray.Array.data[6]
+      value: 
+      objectReference: {fileID: 21300000, guid: 36b7b759ba7722245b53e8e8f8d9e2de,
+        type: 3}
+    - target: {fileID: 603174490380087228, guid: a1c018e4822d44445a56b1bfdf34becb,
+        type: 3}
+      propertyPath: SpriteArray.Array.data[7]
+      value: 
+      objectReference: {fileID: 21300000, guid: 36b7b759ba7722245b53e8e8f8d9e2de,
         type: 3}
     - target: {fileID: 603174490380087229, guid: a1c018e4822d44445a56b1bfdf34becb,
         type: 3}
@@ -2205,7 +2217,7 @@ PrefabInstance:
     - target: {fileID: 3699554880161250917, guid: cff25a6d96a7f81488fef9d41e1f3ed6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.75
+      value: -0.98
       objectReference: {fileID: 0}
     - target: {fileID: 3699554880161250917, guid: cff25a6d96a7f81488fef9d41e1f3ed6,
         type: 3}
@@ -2304,7 +2316,7 @@ PrefabInstance:
     - target: {fileID: 4107442546324210624, guid: 495bf9717ce02654da74a376a5e4964a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4107442546324210624, guid: 495bf9717ce02654da74a376a5e4964a,
         type: 3}
@@ -2324,7 +2336,7 @@ PrefabInstance:
     - target: {fileID: 4107442546324210625, guid: 495bf9717ce02654da74a376a5e4964a,
         type: 3}
       propertyPath: timerBeforeNextSpawn
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4107442546324210625, guid: 495bf9717ce02654da74a376a5e4964a,
         type: 3}

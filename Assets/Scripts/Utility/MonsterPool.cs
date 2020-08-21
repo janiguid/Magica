@@ -52,7 +52,7 @@ public class MonsterPool : MonoBehaviour
     {
         GameObject temp = Instantiate(BaseCopy);
         temp.SetActive(false);
-        if ((int)type > 7)
+        if ((int)type > 8)
         {
             print("TRYING TO SPAWN ILLEGAL MOSNTER");
             type = (Type.ElementalType)Random.Range(0f, 2f);
@@ -62,6 +62,8 @@ public class MonsterPool : MonoBehaviour
 
         if((int)type > SpriteArray.Length - 1)
         {
+            print(SpriteArray.Length);
+            print((int)type);
             print("Missing sprite. Defaulting to water");
             temp.GetComponent<Monster>().ConfigureMonster(type, SpriteArray[(int)Type.ElementalType.Water], ref MonsterEffects);
             EnemyPool.Add(temp);

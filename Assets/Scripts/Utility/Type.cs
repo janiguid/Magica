@@ -12,7 +12,10 @@ public class Type : MonoBehaviour
         PureGrass,
         PureFire,
         PureWater,
-        Neutral,
+        GGF,
+        FFG,
+        Neutral
+
     };
 
 }

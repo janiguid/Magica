@@ -47,6 +47,10 @@ public class MonsterDictionary
 
         Pair FPG = new Pair(Type.ElementalType.Fire, Type.ElementalType.PureGrass);
         MultiplierChart.Add(FPG, 2);
+
+        //Fire-GrassMon
+        Pair FireGrassMonster = new Pair(Type.ElementalType.FFG, Type.ElementalType.GGF);
+        MultiplierChart.Add(FireGrassMonster, 2);
     }
 
     public float GetMultiplier(Type.ElementalType caster, Type.ElementalType target)

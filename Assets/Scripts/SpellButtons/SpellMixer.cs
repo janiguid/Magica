@@ -11,7 +11,8 @@ public class SpellMixer
         spellBook.Add("fff", Type.ElementalType.Fire);
         spellBook.Add("www", Type.ElementalType.Water);
         spellBook.Add("ggg", Type.ElementalType.Grass);
-
+        spellBook.Add("ggf", Type.ElementalType.GGF);
+        spellBook.Add("ffg", Type.ElementalType.FFG);
     }
 
     public Type.ElementalType MixSpells(string input)
