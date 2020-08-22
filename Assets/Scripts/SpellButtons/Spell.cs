@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class Spell:MonoBehaviour
 {
 
-    [SerializeField] protected Type.ElementalType element;
+    [SerializeField] protected Type.ElementalSpellTypes element;
     [SerializeField] protected Player player;
 
 

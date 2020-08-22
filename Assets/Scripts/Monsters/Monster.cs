@@ -7,7 +7,7 @@ public class Monster : MonoBehaviour, IDamageable
     [SerializeField] private float initialHealth;
     [SerializeField] private float health;
     [SerializeField] private SpriteRenderer Sprite;
-    [SerializeField] private Type.ElementalType MyType;
+    [SerializeField] private Type.MonsterTypes MyType;
     [SerializeField] private float damage;
     [SerializeField] private bool isTargeted;
     
@@ -43,19 +43,19 @@ public class Monster : MonoBehaviour, IDamageable
         health = initialHealth;
     }
 
-    public Type.ElementalType GetElement()
+    public Type.MonsterTypes GetElement()
     {
         return MyType;
     }
 
-    public void ConfigureMonster(Type.ElementalType elemental, Sprite sprite, ref EffectsHandler fxHandler)
+    public void ConfigureMonster(Type.MonsterTypes elemental, Sprite sprite, ref EffectsHandler fxHandler)
     {
         MyType = elemental;
         Sprite.sprite = sprite;
 
     }
 
-    public void SetElement(Type.ElementalType elem)
+    public void SetElement(Type.MonsterTypes elem)
     {
         MyType = elem;
     }

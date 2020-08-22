@@ -24,7 +24,7 @@ public class MonsterPool : MonoBehaviour
         spriteDictionary = new MonsterSpriteDictionary();
     }
 
-    public GameObject FindFromPool(Type.ElementalType type)
+    public GameObject FindFromPool(Type.MonsterTypes type)
     {
         for(int i = 0; i < EnemyPool.Count; ++i)
         {
@@ -41,7 +41,7 @@ public class MonsterPool : MonoBehaviour
         return CreateMonster(type);
     }
 
-    void Produce(int enemiesToProduce, Type.ElementalType type)
+    void Produce(int enemiesToProduce, Type.MonsterTypes type)
     {
         for (int i = 0; i < enemiesToProduce; ++i)
         {
@@ -49,26 +49,12 @@ public class MonsterPool : MonoBehaviour
         }
     }
 
-    GameObject CreateMonster(Type.ElementalType type)
+    GameObject CreateMonster(Type.MonsterTypes type)
     {
         GameObject temp = Instantiate(BaseCopy);
         temp.SetActive(false);
-        //if ((int)type > 8)
-        //{
-        //    print("TRYING TO SPAWN ILLEGAL MOSNTER");
-        //    type = (Type.ElementalType)Random.Range(0f, 2f);
-        //}
 
-        //if (MonsterEffects) print("have monster effects");
-
-        //if((int)type > SpriteArray.Length - 1)
-        //{
-
-        //    print("Missing sprite. Defaulting to water");
-        //    temp.GetComponent<Monster>().ConfigureMonster(type, SpriteArray[(int)Type.ElementalType.Water], ref MonsterEffects);
-        //    EnemyPool.Add(temp);
-        //    return temp;
-        //}
+        if (temp == null) print("Missing temp");
         temp.GetComponent<Monster>().ConfigureMonster(type, spriteDictionary.GetMonsterSprite(type), ref MonsterEffects);
         EnemyPool.Add(temp);
         return temp;

@@ -12,6 +12,8 @@ public class SO_LevelConfig : ScriptableObject
 
     [SerializeField] private int[] orderOfMonsters;
 
+    [SerializeField] private Type.MonsterTypes[] monsterOrder;
+
     public int TotalMonsterCount
     {
         get
@@ -63,6 +65,11 @@ public class SO_LevelConfig : ScriptableObject
     public int[] GetOrdering()
     {
         return orderOfMonsters;
+    }
+
+    public Type.MonsterTypes[] GetElementalTypes()
+    {
+        return monsterOrder;
     }
 
     public void SetOrdering(int[] order)

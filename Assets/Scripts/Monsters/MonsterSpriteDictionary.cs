@@ -4,32 +4,32 @@ using UnityEngine;
 
 public class MonsterSpriteDictionary
 {
-    private Dictionary<Type.ElementalType, Sprite> spriteDictionary;
+    private Dictionary<Type.MonsterTypes, Sprite> spriteDictionary;
 
     public MonsterSpriteDictionary()
     {
-        spriteDictionary = new Dictionary<Type.ElementalType, Sprite>();
-        spriteDictionary.Add(Type.ElementalType.Fire, Resources.Load<Sprite>("Monsters/IMG_FFF"));
+        spriteDictionary = new Dictionary<Type.MonsterTypes, Sprite>();
+        spriteDictionary.Add(Type.MonsterTypes.Fire, Resources.Load<Sprite>("Monsters/IMG_FFF"));
 
-        spriteDictionary.Add(Type.ElementalType.Water, Resources.Load<Sprite>("Monsters/IMG_WWW"));
+        spriteDictionary.Add(Type.MonsterTypes.Water, Resources.Load<Sprite>("Monsters/IMG_WWW"));
 
-        spriteDictionary.Add(Type.ElementalType.Grass, Resources.Load<Sprite>("Monsters/IMG_GGG"));
+        spriteDictionary.Add(Type.MonsterTypes.Grass, Resources.Load<Sprite>("Monsters/IMG_GGG"));
 
-        spriteDictionary.Add(Type.ElementalType.PureFire, Resources.Load<Sprite>("Monsters/IMG_PF"));
+        spriteDictionary.Add(Type.MonsterTypes.PureFire, Resources.Load<Sprite>("Monsters/IMG_PF"));
 
-        spriteDictionary.Add(Type.ElementalType.PureGrass, Resources.Load<Sprite>("Monsters/IMG_PG"));
+        spriteDictionary.Add(Type.MonsterTypes.PureGrass, Resources.Load<Sprite>("Monsters/IMG_PG"));
 
-        spriteDictionary.Add(Type.ElementalType.PureWater, Resources.Load<Sprite>("Monsters/IMG_PW"));
+        spriteDictionary.Add(Type.MonsterTypes.PureWater, Resources.Load<Sprite>("Monsters/IMG_PW"));
 
-        spriteDictionary.Add(Type.ElementalType.GGF, Resources.Load<Sprite>("Monsters/IMG_GGF"));
+        spriteDictionary.Add(Type.MonsterTypes.GGF, Resources.Load<Sprite>("Monsters/IMG_GGF"));
 
-        spriteDictionary.Add(Type.ElementalType.GGW, Resources.Load<Sprite>("Monsters/IMG_GGW"));
+        spriteDictionary.Add(Type.MonsterTypes.GGW, Resources.Load<Sprite>("Monsters/IMG_GGW"));
 
-        spriteDictionary.Add(Type.ElementalType.WWF, Resources.Load<Sprite>("Monsters/IMG_WWF"));
+        spriteDictionary.Add(Type.MonsterTypes.WWF, Resources.Load<Sprite>("Monsters/IMG_WWF"));
 
     }
 
-    public Sprite GetMonsterSprite(Type.ElementalType type)
+    public Sprite GetMonsterSprite(Type.MonsterTypes type)
     {
         if (spriteDictionary.ContainsKey(type))
         {
@@ -37,7 +37,8 @@ public class MonsterSpriteDictionary
         }
         else
         {
-            return spriteDictionary[Type.ElementalType.Water];
+
+            return spriteDictionary[Type.MonsterTypes.Water];
         }
     }
 }

@@ -32,7 +32,7 @@ public class Player : Spell
         if (visualizer == null) visualizer = FindObjectOfType<SpellVisualizer>();
         if (maxSpellLength <= 0) maxSpellLength = 3;
         spellMixer = new SpellMixer();
-        SetElement(Type.ElementalType.Neutral);
+        SetElement(Type.ElementalSpellTypes.Neutral);
         currentSpell = "";
     }
 
@@ -40,10 +40,10 @@ public class Player : Spell
     {
 
         //print("Successfully set to neutral");
-        element = Type.ElementalType.Neutral;
+        element = Type.ElementalSpellTypes.Neutral;
     }
 
-    public void AddToSpellStack(Type.ElementalType type)
+    public void AddToSpellStack(Type.ElementalSpellTypes type)
     {
         if (currentSpell.Length == maxSpellLength) return;
         currentSpell += spellMixer.GetRuneType(type);
@@ -73,9 +73,9 @@ public class Player : Spell
             print("Length of spell isn't correct. ERROR");
         }
 
-        Type.ElementalType temp = spellMixer.MixSpells(currentSpell);
+        Type.ElementalSpellTypes temp = spellMixer.MixSpells(currentSpell);
 
-        if(temp == Type.ElementalType.Neutral)
+        if(temp == Type.ElementalSpellTypes.Neutral)
         {
             print("ERROR: Spell isn't inside Spell Mixer");
             ResetSpells();
@@ -95,7 +95,7 @@ public class Player : Spell
         currentSpell = "";
     }
 
-    public void SetElement(Type.ElementalType elem)
+    public void SetElement(Type.ElementalSpellTypes elem)
     {
         element = elem;
         print("New element is: " + element);
@@ -103,7 +103,7 @@ public class Player : Spell
 
     public override void Trigger()
     {
-        if(element == Type.ElementalType.Neutral)
+        if(element == Type.ElementalSpellTypes.Neutral)
         {
             print("Choose a spell");
             return;
@@ -112,7 +112,7 @@ public class Player : Spell
 
         ResetSpells();
         myProjectile.Activate(targetLocator.GetClosestMonster().transform.position, element);
-        element = Type.ElementalType.Neutral;
+        element = Type.ElementalSpellTypes.Neutral;
 
         if (myEffectsHandler)
         {

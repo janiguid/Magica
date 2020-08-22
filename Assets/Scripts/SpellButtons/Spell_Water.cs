@@ -8,7 +8,7 @@ public class Spell_Water : Spell
     public override void InitializeElement()
     {
         //print("Successfully set to water type");
-        element = Type.ElementalType.Water;
+        element = Type.ElementalSpellTypes.Water;
     }
 
 

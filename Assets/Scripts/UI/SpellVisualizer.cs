@@ -14,7 +14,7 @@ public class SpellVisualizer : MonoBehaviour
     [SerializeField] private Sprite[] spellSprites;
 
 
-    public void RefreshUI(Type.ElementalType type)
+    public void RefreshUI(Type.ElementalSpellTypes type)
     {
         spellIndicators[iterator].sprite = spellSprites[(int)type];
         ++iterator;

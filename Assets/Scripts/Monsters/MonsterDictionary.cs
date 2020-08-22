@@ -10,60 +10,60 @@ public class MonsterDictionary
     {
         MultiplierChart = new Dictionary<Pair, float>();
 
-        Pair GF = new Pair(Type.ElementalType.Grass, Type.ElementalType.Fire);
+        Pair GF = new Pair(Type.ElementalSpellTypes.Grass, Type.MonsterTypes.Fire);
         MultiplierChart.Add(GF, 0.5f);
 
-        Pair GW = new Pair(Type.ElementalType.Grass, Type.ElementalType.Water);
+        Pair GW = new Pair(Type.ElementalSpellTypes.Grass, Type.MonsterTypes.Water);
         MultiplierChart.Add(GW, 2f);
 
-        Pair GG = new Pair(Type.ElementalType.Grass, Type.ElementalType.Grass);
+        Pair GG = new Pair(Type.ElementalSpellTypes.Grass, Type.MonsterTypes.Grass);
         MultiplierChart.Add(GG, 1f);
 
-        Pair FG = new Pair(Type.ElementalType.Fire, Type.ElementalType.Grass);
+        Pair FG = new Pair(Type.ElementalSpellTypes.Fire, Type.MonsterTypes.Grass);
         MultiplierChart.Add(FG, 2f);
 
-        Pair FW = new Pair(Type.ElementalType.Fire, Type.ElementalType.Water);
+        Pair FW = new Pair(Type.ElementalSpellTypes.Fire, Type.MonsterTypes.Water);
         MultiplierChart.Add(FW, 0.5f);
 
-        Pair FF = new Pair(Type.ElementalType.Fire, Type.ElementalType.Fire);
+        Pair FF = new Pair(Type.ElementalSpellTypes.Fire, Type.MonsterTypes.Fire);
         MultiplierChart.Add(FF, 1f);
 
-        Pair WG = new Pair(Type.ElementalType.Water, Type.ElementalType.Grass);
+        Pair WG = new Pair(Type.ElementalSpellTypes.Water, Type.MonsterTypes.Grass);
         MultiplierChart.Add(WG, 0.5f);
 
-        Pair WF = new Pair(Type.ElementalType.Water, Type.ElementalType.Fire);
+        Pair WF = new Pair(Type.ElementalSpellTypes.Water, Type.MonsterTypes.Fire);
         MultiplierChart.Add(WF, 2f);
 
-        Pair WW = new Pair(Type.ElementalType.Water, Type.ElementalType.Water);
+        Pair WW = new Pair(Type.ElementalSpellTypes.Water, Type.MonsterTypes.Water);
         MultiplierChart.Add(WW, 1f);
 
 
         //Pure Monsters
-        Pair WPF = new Pair(Type.ElementalType.Water, Type.ElementalType.PureFire);
+        Pair WPF = new Pair(Type.ElementalSpellTypes.Water, Type.MonsterTypes.PureFire);
         MultiplierChart.Add(WPF, 2);
 
-        Pair GPW = new Pair(Type.ElementalType.Grass, Type.ElementalType.PureWater);
+        Pair GPW = new Pair(Type.ElementalSpellTypes.Grass, Type.MonsterTypes.PureWater);
         MultiplierChart.Add(GPW, 2);
 
-        Pair FPG = new Pair(Type.ElementalType.Fire, Type.ElementalType.PureGrass);
+        Pair FPG = new Pair(Type.ElementalSpellTypes.Fire, Type.MonsterTypes.PureGrass);
         MultiplierChart.Add(FPG, 2);
 
         //Fire-Grass Monster
-        Pair FireGrassMonster = new Pair(Type.ElementalType.FFW, Type.ElementalType.GGF);
+        Pair FireGrassMonster = new Pair(Type.ElementalSpellTypes.FFW, Type.MonsterTypes.GGF);
         MultiplierChart.Add(FireGrassMonster, 2);
 
         //Grass-Water Monster
-        Pair GrassWaterMonster = new Pair(Type.ElementalType.FFG, Type.ElementalType.GGW);
+        Pair GrassWaterMonster = new Pair(Type.ElementalSpellTypes.FFG, Type.MonsterTypes.GGW);
         MultiplierChart.Add(GrassWaterMonster, 2);
 
         //Water-Fire Monster
-        Pair WaterFireMonster = new Pair(Type.ElementalType.GGW, Type.ElementalType.WWF);
+        Pair WaterFireMonster = new Pair(Type.ElementalSpellTypes.GGW, Type.MonsterTypes.WWF);
         MultiplierChart.Add(WaterFireMonster, 2);
 
     }
 
 
-    public float GetMultiplier(Type.ElementalType spellType, Type.ElementalType monsterType)
+    public float GetMultiplier(Type.ElementalSpellTypes spellType, Type.MonsterTypes monsterType)
     {
         Pair Pairing = new Pair(spellType, monsterType);
 
@@ -79,10 +79,10 @@ public class MonsterDictionary
 
 struct Pair
 {
-    Type.ElementalType spellType;
-    Type.ElementalType monsterType;
+    Type.ElementalSpellTypes spellType;
+    Type.MonsterTypes monsterType;
 
-    public Pair(Type.ElementalType typeOfSpell, Type.ElementalType typeOfMonster)
+    public Pair(Type.ElementalSpellTypes typeOfSpell, Type.MonsterTypes typeOfMonster)
     {
         spellType = typeOfSpell;
         monsterType = typeOfMonster;

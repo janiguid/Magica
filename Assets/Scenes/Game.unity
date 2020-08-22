@@ -2348,7 +2348,7 @@ PrefabInstance:
     - target: {fileID: 4107442546324210625, guid: 495bf9717ce02654da74a376a5e4964a,
         type: 3}
       propertyPath: timerBeforeNextSpawn
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4107442546324210625, guid: 495bf9717ce02654da74a376a5e4964a,
         type: 3}

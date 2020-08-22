@@ -8,7 +8,7 @@ public class Spell_Grass : Spell
     public override void InitializeElement()
     {
         //print("Successfully set to grass type");
-        element = Type.ElementalType.Grass;
+        element = Type.ElementalSpellTypes.Grass;
     }
 
 

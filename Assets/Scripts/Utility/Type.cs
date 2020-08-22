@@ -4,7 +4,23 @@ using UnityEngine;
 
 public class Type : MonoBehaviour
 {
-    public enum ElementalType
+    public enum ElementalSpellTypes
+    {
+        Grass,
+        Fire,
+        Water,
+        PureGrass,
+        PureFire,
+        PureWater,
+        GGW,
+        FFW,
+        FFG,
+        Neutral
+
+    };
+
+
+    public enum MonsterTypes
     {
         Grass,
         Fire,
@@ -13,12 +29,9 @@ public class Type : MonoBehaviour
         PureFire,
         PureWater,
         GGF,
-        FFW,
         GGW,
-        FFG,
-        WWF,
-        Neutral
+        WWF
 
-    };
+    }
 
 }

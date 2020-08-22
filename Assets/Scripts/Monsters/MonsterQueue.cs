@@ -10,6 +10,7 @@ public class MonsterQueue : MonoBehaviour
     [SerializeField] private float timer;
     [SerializeField] private SO_LevelConfig lvlConfig;
     [SerializeField] private int[] orderOfMonsters;
+    [SerializeField] private Type.MonsterTypes[] monsterTypes;
     [SerializeField] private int monsterIndexCounter;
     [SerializeField] private GameObject gameOverButton; 
     // Start is called before the first frame update
@@ -19,6 +20,7 @@ public class MonsterQueue : MonoBehaviour
         monsterPool = FindObjectOfType<MonsterPool>();
 
         orderOfMonsters = lvlConfig.GetOrdering();
+        monsterTypes = lvlConfig.GetElementalTypes();
 
         BeginLevel();
     }
@@ -39,8 +41,8 @@ public class MonsterQueue : MonoBehaviour
 
     void SpawnMonster()
     {
-        monsterIndexCounter++;
-        if (monsterIndexCounter >= orderOfMonsters.Length)
+        
+        if (monsterIndexCounter >= monsterTypes.Length)
         {
             if (monsterPool.IsEmpty())
             {
@@ -51,9 +53,11 @@ public class MonsterQueue : MonoBehaviour
         }
         else
         {
-            GameObject Fresh = monsterPool.FindFromPool((Type.ElementalType)orderOfMonsters[monsterIndexCounter]);
+            GameObject Fresh = monsterPool.FindFromPool(monsterTypes[monsterIndexCounter]);
             Fresh.transform.position = GetNewPosition();
             Fresh.SetActive(true);
+            monsterIndexCounter++;
+
         }
 
     }

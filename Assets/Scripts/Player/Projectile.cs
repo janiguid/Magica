@@ -8,7 +8,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] private float InitialSpeed;
     [SerializeField] private Color InitialColor;
 
-    Type.ElementalType MyType;
+    Type.ElementalSpellTypes MyType;
 
     private float Speed;
     Vector2 OriginalPosition;
@@ -37,15 +37,15 @@ public class Projectile : MonoBehaviour
 
     void Recolor()
     {
-        if (MyType == Type.ElementalType.Grass)
+        if (MyType == Type.ElementalSpellTypes.Grass)
         {
             InitialColor = Color.green;
         }
-        else if (MyType == Type.ElementalType.Fire)
+        else if (MyType == Type.ElementalSpellTypes.Fire)
         {
             InitialColor = Color.red;
         }
-        else if (MyType == Type.ElementalType.Water)
+        else if (MyType == Type.ElementalSpellTypes.Water)
         {
             InitialColor = Color.blue;
         }
@@ -64,7 +64,7 @@ public class Projectile : MonoBehaviour
         Target = Vector3.zero;
     }
 
-    public void Activate(Vector3 target, Type.ElementalType type)
+    public void Activate(Vector3 target, Type.ElementalSpellTypes type)
     {
 
         gameObject.SetActive(true);

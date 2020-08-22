@@ -3,39 +3,38 @@ using System.Collections.Generic;
 
 public class SpellMixer
 {
-    private Dictionary<string, Type.ElementalType> spellBook;
+    private Dictionary<string, Type.ElementalSpellTypes> spellBook;
 
     public SpellMixer()
     {
-        spellBook = new Dictionary<string, Type.ElementalType>();
-        spellBook.Add("fff", Type.ElementalType.Fire);
-        spellBook.Add("www", Type.ElementalType.Water);
-        spellBook.Add("ggg", Type.ElementalType.Grass);
-        spellBook.Add("ggf", Type.ElementalType.GGF);
-        spellBook.Add("ggw", Type.ElementalType.GGW);
-        spellBook.Add("ffg", Type.ElementalType.FFG);
-        spellBook.Add("wwf", Type.ElementalType.WWF);
+        spellBook = new Dictionary<string, Type.ElementalSpellTypes>();
+        spellBook.Add("fff", Type.ElementalSpellTypes.Fire);
+        spellBook.Add("www", Type.ElementalSpellTypes.Water);
+        spellBook.Add("ggg", Type.ElementalSpellTypes.Grass);
+        spellBook.Add("ffw", Type.ElementalSpellTypes.FFW);
+        spellBook.Add("ggw", Type.ElementalSpellTypes.GGW);
+        spellBook.Add("ffg", Type.ElementalSpellTypes.FFG);
 
     }
 
-    public Type.ElementalType MixSpells(string input)
+    public Type.ElementalSpellTypes MixSpells(string input)
     {
         if (spellBook.ContainsKey(input) == false)
         {
             
-            return Type.ElementalType.Neutral;
+            return Type.ElementalSpellTypes.Neutral;
         }
         return spellBook[input];
     }
 
-    public char GetRuneType(Type.ElementalType type)
+    public char GetRuneType(Type.ElementalSpellTypes type)
     {
         switch (type) {
-            case Type.ElementalType.Fire:
+            case Type.ElementalSpellTypes.Fire:
                 return 'f';
-            case Type.ElementalType.Grass:
+            case Type.ElementalSpellTypes.Grass:
                 return 'g';
-            case Type.ElementalType.Water:
+            case Type.ElementalSpellTypes.Water:
                 return 'w';
         }
 
