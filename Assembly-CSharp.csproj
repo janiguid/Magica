@@ -73,7 +73,10 @@
     <Compile Include="Assets\JMOAssets\Cartoon FX\Scripts\CFX_AutoRotate.cs" />
     <Compile Include="Assets\JMOAssets\Cartoon FX\Scripts\CFX_LightFlicker.cs" />
     <Compile Include="Assets\JMOAssets\Cartoon FX\Scripts\CFX_LightIntensityFade.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\IInteractable.cs" />
     <Compile Include="Assets\Scripts\Monsters\Monster.cs" />
+    <Compile Include="Assets\Scripts\Monsters\MonsterButtonSubject.cs" />
+    <Compile Include="Assets\Scripts\Monsters\MonsterDescriptions.cs" />
     <Compile Include="Assets\Scripts\Monsters\MonsterDictionary.cs" />
     <Compile Include="Assets\Scripts\Monsters\MonsterMovement.cs" />
     <Compile Include="Assets\Scripts\Monsters\MonsterPool.cs" />
@@ -90,11 +93,11 @@
     <Compile Include="Assets\Scripts\SpellButtons\Spell_Fire.cs" />
     <Compile Include="Assets\Scripts\SpellButtons\Spell_Grass.cs" />
     <Compile Include="Assets\Scripts\SpellButtons\Spell_Water.cs" />
-    <Compile Include="Assets\Scripts\SpellButtons\Subject.cs" />
     <Compile Include="Assets\Scripts\UI\MapElement.cs" />
     <Compile Include="Assets\Scripts\UI\MenuElement.cs" />
     <Compile Include="Assets\Scripts\UI\PanelButton.cs" />
     <Compile Include="Assets\Scripts\UI\SpellVisualizer.cs" />
+    <Compile Include="Assets\Scripts\UI\UICloser.cs" />
     <Compile Include="Assets\Scripts\Utility\EffectsHandler.cs" />
     <Compile Include="Assets\Scripts\Utility\FrameRateHandler.cs" />
     <Compile Include="Assets\Scripts\Utility\Maximums.cs" />
