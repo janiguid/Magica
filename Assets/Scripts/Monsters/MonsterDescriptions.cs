@@ -23,7 +23,6 @@ public class MonsterDescriptions : MonoBehaviour, IInteractable
 
     public bool Interact(float posX, float posY)
     {
-        print("My bounds: " + bounds);
         
         if(posX < bounds.max.x && posX > bounds.min.x)
         {

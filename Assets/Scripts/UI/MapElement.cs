@@ -11,7 +11,7 @@ public class MapElement : MonoBehaviour
 
     public void ConfigureLevel()
     {
-        placeholderLevel.SetOrdering(myLevel.GetOrdering());
+        placeholderLevel.SetMonsterOrder(myLevel.GetMonsterOrder());
         SceneManager.LoadScene(mapLevel);
     }
 

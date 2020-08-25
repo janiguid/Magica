@@ -20,7 +20,7 @@ public class MonsterQueue : MonoBehaviour
         monsterPool = FindObjectOfType<MonsterPool>();
 
         orderOfMonsters = lvlConfig.GetOrdering();
-        monsterTypes = lvlConfig.GetElementalTypes();
+        monsterTypes = lvlConfig.GetMonsterOrder();
 
         BeginLevel();
     }

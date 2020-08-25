@@ -67,9 +67,15 @@ public class SO_LevelConfig : ScriptableObject
         return orderOfMonsters;
     }
 
-    public Type.MonsterTypes[] GetElementalTypes()
+    public Type.MonsterTypes[] GetMonsterOrder()
     {
         return monsterOrder;
+    }
+
+
+    public void SetMonsterOrder(Type.MonsterTypes[] monsters)
+    {
+        monsterOrder = monsters;
     }
 
     public void SetOrdering(int[] order)

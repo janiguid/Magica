@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 224202710}
   - component: {fileID: 224202709}
   m_Layer: 5
-  m_Name: Settings
+  m_Name: MonsterHelp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 351de4d56804c964aa42f6f785c7d5ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneToGoTo: 0
+  SceneToGoTo: 3
 --- !u!114 &224202710
 MonoBehaviour:
   m_ObjectHideFlags: 0

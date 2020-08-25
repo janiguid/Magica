@@ -36,13 +36,25 @@ public class MonsterButtonSubject : MonoBehaviour
 
 
         if (descriptionBox.activeSelf == true) return;
-        if (Input.touchCount == 1)
+        if (Input.touchCount == 1 || Input.GetMouseButtonDown(0))
         {
-            Touch point = Input.GetTouch(0);
-            print(point.position);
 
-            Vector3 worldPos = Camera.main.ScreenToWorldPoint(point.position);
 
+            Vector2 worldPos = Vector2.zero;
+            if(Input.touchCount == 1)
+            {
+                Touch point = Input.GetTouch(0);
+                print(point.position);
+                worldPos = ConvertPosition(point.position);
+            }else if (Input.GetMouseButtonDown(0))
+            {
+                worldPos = ConvertPosition(Input.mousePosition);
+            }
+            
+            if(worldPos == Vector2.zero)
+            {
+                print("Error in converting inputs!");
+            }
 
 
 
@@ -68,6 +80,12 @@ public class MonsterButtonSubject : MonoBehaviour
                 }
             }
         }
+    }
+
+    
+    Vector2 ConvertPosition(Vector2 pointToBeConverted)
+    {
+        return Camera.main.ScreenToWorldPoint(pointToBeConverted);
     }
     
 

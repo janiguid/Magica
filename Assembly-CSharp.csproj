@@ -74,6 +74,8 @@
     <Compile Include="Assets\JMOAssets\Cartoon FX\Scripts\CFX_LightFlicker.cs" />
     <Compile Include="Assets\JMOAssets\Cartoon FX\Scripts\CFX_LightIntensityFade.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IInteractable.cs" />
+    <Compile Include="Assets\Scripts\Map\MapManager.cs" />
+    <Compile Include="Assets\Scripts\Map\SO_GameInfoInstance.cs" />
     <Compile Include="Assets\Scripts\Monsters\Monster.cs" />
     <Compile Include="Assets\Scripts\Monsters\MonsterButtonSubject.cs" />
     <Compile Include="Assets\Scripts\Monsters\MonsterDescriptions.cs" />
