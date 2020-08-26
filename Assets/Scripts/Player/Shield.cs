@@ -8,7 +8,6 @@ public class Shield : MonoBehaviour, IDamageable
 {
     [SerializeField] private SO_PlayerStats MyStats;
     [SerializeField] private GameObject gameOverButton;
-
     [SerializeField] private float MyHealth;
     // Start is called before the first frame update
     void Start()
@@ -34,6 +33,11 @@ public class Shield : MonoBehaviour, IDamageable
             }
             
         }
+    }
+
+    public float GetHealth()
+    {
+        return MyHealth;
     }
 
 }

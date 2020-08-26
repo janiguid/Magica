@@ -263,9 +263,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 958de28b59232664a8382ef91f1e9f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapLevel: 0
+  gameLevel: 0
   myLevel: {fileID: 11400000, guid: 1de285d3300b23a4cabb12888f363638, type: 2}
   placeholderLevel: {fileID: 11400000, guid: 94aea6df4099e4b44b1dd52e335ac931, type: 2}
+  gameInstance: {fileID: 11400000, guid: 782204c37ae4c4e478213cb596d6e395, type: 2}
+  mapLevel: 0
 --- !u!1 &174993996
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,9 +410,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 958de28b59232664a8382ef91f1e9f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapLevel: 0
+  gameLevel: 0
   myLevel: {fileID: 11400000, guid: 2eea13695349f8c48b4db59ca6c4b9f9, type: 2}
   placeholderLevel: {fileID: 11400000, guid: 94aea6df4099e4b44b1dd52e335ac931, type: 2}
+  gameInstance: {fileID: 11400000, guid: 782204c37ae4c4e478213cb596d6e395, type: 2}
+  mapLevel: 4
 --- !u!1 &276352994
 GameObject:
   m_ObjectHideFlags: 0
@@ -823,6 +827,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameInstance: {fileID: 11400000, guid: 782204c37ae4c4e478213cb596d6e395, type: 2}
   startingTutorialPanel: {fileID: 1882956004}
+  levels:
+  - {fileID: 71445694}
+  - {fileID: 1110440762}
+  - {fileID: 657281908}
+  - {fileID: 664882924}
+  - {fileID: 174993998}
 --- !u!4 &589810579
 Transform:
   m_ObjectHideFlags: 0
@@ -1204,9 +1214,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 958de28b59232664a8382ef91f1e9f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapLevel: 0
+  gameLevel: 0
   myLevel: {fileID: 11400000, guid: eed4985dfa97428419b84a03ffb3dd35, type: 2}
   placeholderLevel: {fileID: 11400000, guid: 94aea6df4099e4b44b1dd52e335ac931, type: 2}
+  gameInstance: {fileID: 11400000, guid: 782204c37ae4c4e478213cb596d6e395, type: 2}
+  mapLevel: 2
 --- !u!1 &664882922
 GameObject:
   m_ObjectHideFlags: 0
@@ -1349,9 +1361,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 958de28b59232664a8382ef91f1e9f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapLevel: 0
+  gameLevel: 0
   myLevel: {fileID: 11400000, guid: fb898f6fcd3bba44eb22bae2a8ed81f6, type: 2}
   placeholderLevel: {fileID: 11400000, guid: 94aea6df4099e4b44b1dd52e335ac931, type: 2}
+  gameInstance: {fileID: 11400000, guid: 782204c37ae4c4e478213cb596d6e395, type: 2}
+  mapLevel: 3
 --- !u!1 &682413287
 GameObject:
   m_ObjectHideFlags: 0
@@ -1874,9 +1888,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 958de28b59232664a8382ef91f1e9f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapLevel: 0
+  gameLevel: 0
   myLevel: {fileID: 11400000, guid: 52c9cb6965170c541826e374600702f8, type: 2}
   placeholderLevel: {fileID: 11400000, guid: 94aea6df4099e4b44b1dd52e335ac931, type: 2}
+  gameInstance: {fileID: 11400000, guid: 782204c37ae4c4e478213cb596d6e395, type: 2}
+  mapLevel: 1
 --- !u!1 &1198134829
 GameObject:
   m_ObjectHideFlags: 0

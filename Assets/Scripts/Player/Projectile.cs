@@ -4,31 +4,31 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    [SerializeField] private Vector3 Target;
-    [SerializeField] private float InitialSpeed;
-    [SerializeField] private Color InitialColor;
+    [SerializeField] private Vector3 target;
+    [SerializeField] private float initialSpeed;
+    [SerializeField] private Color initialColor;
+    [SerializeField] private CameraShaker cameraShake;
+    [SerializeField] private SpriteRenderer spriteRenderer;
 
-    Type.ElementalSpellTypes MyType;
 
-    private float Speed;
-    Vector2 OriginalPosition;
-
-    [SerializeField]
-    private SpriteRenderer spriteRenderer;
-
-    MonsterDictionary monsterDict;
+     private Type.ElementalSpellTypes myType;
+     private float speed;
+     private Vector2 originalPosition;
+     private MonsterDictionary monsterDict;
 
     private void Start()
     {
-        print("TEA");
-        OriginalPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
-        Speed = InitialSpeed;
+        originalPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
+        speed = initialSpeed;
 
+        if (speed <= 0) speed = 5f;
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
 
         monsterDict = new MonsterDictionary();
 
-        InitialColor = Color.white;
+        initialColor = Color.white;
+
+        cameraShake = GameObject.FindObjectOfType<CameraShaker>();
 
         Recolor();
     }
@@ -37,40 +37,40 @@ public class Projectile : MonoBehaviour
 
     void Recolor()
     {
-        if (MyType == Type.ElementalSpellTypes.Grass)
+        if (myType == Type.ElementalSpellTypes.Grass)
         {
-            InitialColor = Color.green;
+            initialColor = Color.green;
         }
-        else if (MyType == Type.ElementalSpellTypes.Fire)
+        else if (myType == Type.ElementalSpellTypes.Fire)
         {
-            InitialColor = Color.red;
+            initialColor = Color.red;
         }
-        else if (MyType == Type.ElementalSpellTypes.Water)
+        else if (myType == Type.ElementalSpellTypes.Water)
         {
-            InitialColor = Color.blue;
+            initialColor = Color.blue;
         }
         else
         {
-            InitialColor = Color.white;
+            initialColor = Color.white;
         }
 
-        spriteRenderer.color = InitialColor;
+        spriteRenderer.color = initialColor;
     }
 
     public void ResetPosition()
     {
         gameObject.SetActive(false);
-        transform.position = OriginalPosition;
-        Target = Vector3.zero;
+        transform.position = originalPosition;
+        target = Vector3.zero;
     }
 
     public void Activate(Vector3 target, Type.ElementalSpellTypes type)
     {
 
         gameObject.SetActive(true);
-        Target = target;
+        this.target = target;
 
-        MyType = type;
+        myType = type;
         Recolor();
 
     }
@@ -81,13 +81,13 @@ public class Projectile : MonoBehaviour
         //move towards target
         //if collide, deactivate and reset position
 
-        if(Target != Vector3.zero)
+        if(target != Vector3.zero)
         {
-            float step = Speed * Time.deltaTime;
-            transform.position = Vector2.MoveTowards(transform.position, Target, step);
+            float step = speed * Time.deltaTime;
+            transform.position = Vector2.MoveTowards(transform.position, target, step);
         }
 
-        if (transform.position == Target) ResetPosition();
+        if (transform.position == target) ResetPosition();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -103,15 +103,21 @@ public class Projectile : MonoBehaviour
                 ResetPosition();
                 float InitialDamage = 10f;
 
-                InitialDamage *= monsterDict.GetMultiplier(MyType, target.GetElement());
+                InitialDamage *= monsterDict.GetMultiplier(myType, target.GetElement());
 
                 if(InitialDamage == 0)
                 {
                     print("Illegal combination detected");
                 }
-                print("Used " + MyType + " against " + target.GetElement() + " monster and dealt " + InitialDamage + " damage");
+                print("Used " + myType + " against " + target.GetElement() + " monster and dealt " + InitialDamage + " damage");
                 target.ApplyDamage(InitialDamage);
                 FindObjectOfType<Targeter>().ResetMin();
+
+                if (cameraShake != null)
+                {
+                    print("Should shake");
+                    cameraShake.StartShake(0.1f, 0.15f, 0.15f);
+                }
             }
             print("Found monster");
         }

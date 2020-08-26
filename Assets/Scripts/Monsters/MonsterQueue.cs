@@ -12,7 +12,9 @@ public class MonsterQueue : MonoBehaviour
     [SerializeField] private int[] orderOfMonsters;
     [SerializeField] private Type.MonsterTypes[] monsterTypes;
     [SerializeField] private int monsterIndexCounter;
-    [SerializeField] private GameObject gameOverButton; 
+    [SerializeField] private GameObject gameOverButton;
+    [SerializeField] private SO_GameInfoInstance gameInstance;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +49,24 @@ public class MonsterQueue : MonoBehaviour
             if (monsterPool.IsEmpty())
             {
                 gameOverButton.SetActive(true);
+
+                float shieldHealth = GameObject.FindObjectOfType<Shield>().GetHealth();
+
+                if (gameInstance)
+                {
+                    
+
+                    if (gameInstance.CurrentLevel == gameInstance.FurthestLevel && shieldHealth > 0)
+                    {
+                        ++gameInstance.FurthestLevel;
+                    }
+                }
+                else
+                {
+                    print("ERROR: Missing game instance reference in Monster Queue");
+                }
+
+
                 return;
             }
 

@@ -100,6 +100,7 @@
     <Compile Include="Assets\Scripts\UI\PanelButton.cs" />
     <Compile Include="Assets\Scripts\UI\SpellVisualizer.cs" />
     <Compile Include="Assets\Scripts\UI\UICloser.cs" />
+    <Compile Include="Assets\Scripts\Utility\CameraShaker.cs" />
     <Compile Include="Assets\Scripts\Utility\EffectsHandler.cs" />
     <Compile Include="Assets\Scripts\Utility\FrameRateHandler.cs" />
     <Compile Include="Assets\Scripts\Utility\Maximums.cs" />

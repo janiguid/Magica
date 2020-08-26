@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: GameInstance
   m_EditorClassIdentifier: 
   tutorialCompleted: 1
+  currentLevel: 0
+  furthestLevel: 0

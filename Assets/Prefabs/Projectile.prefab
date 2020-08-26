@@ -96,8 +96,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5feb281ab4d9a740bbe7c341184c1d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InitialSpeed: 30
-  InitialColor: {r: 0, g: 0, b: 0, a: 0}
+  target: {x: 0, y: 0, z: 0}
+  initialSpeed: 20
+  initialColor: {r: 0, g: 0, b: 0, a: 0}
+  cameraShake: {fileID: 0}
   spriteRenderer: {fileID: 4496144008915863064}
 --- !u!61 &-6304490409735758568
 BoxCollider2D:
