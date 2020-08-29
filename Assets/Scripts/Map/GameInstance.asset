@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af9747f9a57e46b46bbef60faa8be946, type: 3}
   m_Name: GameInstance
   m_EditorClassIdentifier: 
-  tutorialCompleted: 1
+  tutorialCompleted: 0
   currentLevel: 0
   furthestLevel: 0

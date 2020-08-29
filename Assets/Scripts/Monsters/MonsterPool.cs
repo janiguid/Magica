@@ -15,13 +15,14 @@ public class MonsterPool : MonoBehaviour
     private void Awake()
     {
         MonsterEffects = FindObjectOfType<EffectsHandler>();
+        spriteDictionary = new MonsterSpriteDictionary();
     }
 
     // Start is called before the first frame update
     void Start()
     {
         EnemyPool = new List<GameObject>();
-        spriteDictionary = new MonsterSpriteDictionary();
+        
     }
 
     public GameObject FindFromPool(Type.MonsterTypes type)
@@ -52,10 +53,17 @@ public class MonsterPool : MonoBehaviour
     GameObject CreateMonster(Type.MonsterTypes type)
     {
         GameObject temp = Instantiate(BaseCopy);
+        print(type);
+        Monster checkerMonster = new Monster();
         temp.SetActive(false);
 
         if (temp == null) print("Missing temp");
-        temp.GetComponent<Monster>().ConfigureMonster(type, spriteDictionary.GetMonsterSprite(type), ref MonsterEffects);
+        if(temp.TryGetComponent<Monster>(out checkerMonster)){
+            if (spriteDictionary == null) print("missing spritedict");
+            if (spriteDictionary.GetMonsterSprite(type) == null) print("missing sprite");
+            temp.GetComponent<Monster>().ConfigureMonster(type, spriteDictionary.GetMonsterSprite(type));
+        }
+        
         EnemyPool.Add(temp);
         return temp;
     }

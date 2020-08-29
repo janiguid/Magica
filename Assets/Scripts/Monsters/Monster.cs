@@ -55,6 +55,13 @@ public class Monster : MonoBehaviour, IDamageable
 
     }
 
+    public void ConfigureMonster(Type.MonsterTypes elemental, Sprite sprite)
+    {
+        MyType = elemental;
+        Sprite.sprite = sprite;
+
+    }
+
     public void SetElement(Type.MonsterTypes elem)
     {
         MyType = elem;
