@@ -27,6 +27,8 @@ public class MonsterSpriteDictionary
 
         spriteDictionary.Add(Type.MonsterTypes.WWF, Resources.Load<Sprite>("Monsters/IMG_WWF"));
 
+        //Append new sprites here
+
     }
 
     public Sprite GetMonsterSprite(Type.MonsterTypes type)

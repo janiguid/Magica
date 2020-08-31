@@ -9,6 +9,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] private Color initialColor;
     [SerializeField] private CameraShaker cameraShake;
     [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private DeathParticles deathParticles;
 
 
      private Type.ElementalSpellTypes myType;
@@ -16,8 +17,14 @@ public class Projectile : MonoBehaviour
      private Vector2 originalPosition;
      private MonsterDictionary monsterDict;
 
+    private void Awake()
+    {
+        
+    }
+
     private void Start()
     {
+       
         originalPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
         speed = initialSpeed;
 
@@ -29,6 +36,8 @@ public class Projectile : MonoBehaviour
         initialColor = Color.white;
 
         cameraShake = GameObject.FindObjectOfType<CameraShaker>();
+
+        deathParticles = FindObjectOfType<DeathParticles>();
 
         Recolor();
     }
@@ -59,6 +68,11 @@ public class Projectile : MonoBehaviour
 
     public void ResetPosition()
     {
+
+        if (deathParticles)
+        {
+            deathParticles.Play(myType, transform);
+        }
         gameObject.SetActive(false);
         transform.position = originalPosition;
         target = Vector3.zero;

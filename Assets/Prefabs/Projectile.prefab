@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 4496144008915863065}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.63839877, y: 1.1491177, z: 0.63839877}
+  m_LocalScale: {x: 0.5, y: 0.7, z: 0.63839877}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -101,6 +101,7 @@ MonoBehaviour:
   initialColor: {r: 0, g: 0, b: 0, a: 0}
   cameraShake: {fileID: 0}
   spriteRenderer: {fileID: 4496144008915863064}
+  deathParticles: {fileID: 0}
 --- !u!61 &-6304490409735758568
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -6,12 +6,11 @@ public class Monster : MonoBehaviour, IDamageable
 {
     [SerializeField] private float initialHealth;
     [SerializeField] private float health;
-    [SerializeField] private SpriteRenderer Sprite;
-    [SerializeField] private Type.MonsterTypes MyType;
+    [SerializeField] private SpriteRenderer sprite;
+    [SerializeField] private Type.MonsterTypes myType;
     [SerializeField] private float damage;
     [SerializeField] private bool isTargeted;
-    
-    
+
     public bool IsTargeted
     {
         get
@@ -24,47 +23,54 @@ public class Monster : MonoBehaviour, IDamageable
         }
     }
 
-    Color InitialColor;
-
     private void Awake()
     {
-        Sprite = gameObject.GetComponent<SpriteRenderer>();
+        RefreshReferences();
     }
 
     private void Start()
     {
         damage = 5f;
+    }
 
+    private void RefreshReferences()
+    {
+        sprite = gameObject.GetComponent<SpriteRenderer>();
+        health = initialHealth;
     }
 
     private void OnEnable()
     {
-        Sprite = gameObject.GetComponent<SpriteRenderer>();
-        health = initialHealth;
+        RefreshReferences();
+    }
+
+    public float GetHealth()
+    {
+        return health;
     }
 
     public Type.MonsterTypes GetElement()
     {
-        return MyType;
+        return myType;
     }
 
     public void ConfigureMonster(Type.MonsterTypes elemental, Sprite sprite, ref EffectsHandler fxHandler)
     {
-        MyType = elemental;
-        Sprite.sprite = sprite;
+        myType = elemental;
+        this.sprite.sprite = sprite;
 
     }
 
     public void ConfigureMonster(Type.MonsterTypes elemental, Sprite sprite)
     {
-        MyType = elemental;
-        Sprite.sprite = sprite;
+        myType = elemental;
+        this.sprite.sprite = sprite;
 
     }
 
     public void SetElement(Type.MonsterTypes elem)
     {
-        MyType = elem;
+        myType = elem;
     }
 
 
@@ -75,9 +81,7 @@ public class Monster : MonoBehaviour, IDamageable
 
         if (health <= 0)
         {
- 
-            gameObject.SetActive(false);
-            
+            gameObject.SetActive(false);       
         }
     }
 

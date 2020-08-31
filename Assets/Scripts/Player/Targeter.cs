@@ -35,7 +35,7 @@ public class Targeter : MonoBehaviour
             
             if (MinPos.y <= MaxPos.y) MinPos = InitialMin;
 
-            if(Monsters[i].transform.position.y < MinPos.y)
+            if(Monsters[i].transform.position.y < MinPos.y && Monsters[i].GetHealth() > 0)
             {
                 ClosestMonster = Monsters[i].gameObject;
                 MinPos.y = ClosestMonster.transform.position.y;

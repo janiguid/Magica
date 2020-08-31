@@ -54,7 +54,7 @@ public class MonsterPool : MonoBehaviour
     {
         GameObject temp = Instantiate(BaseCopy);
         print(type);
-        Monster checkerMonster = new Monster();
+        Monster checkerMonster;
         temp.SetActive(false);
 
         if (temp == null) print("Missing temp");
