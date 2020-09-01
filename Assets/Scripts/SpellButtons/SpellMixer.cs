@@ -5,6 +5,7 @@ public class SpellMixer
 {
     private Dictionary<string, Type.ElementalSpellTypes> spellBook;
 
+
     public SpellMixer()
     {
         spellBook = new Dictionary<string, Type.ElementalSpellTypes>();
@@ -19,12 +20,33 @@ public class SpellMixer
 
     public Type.ElementalSpellTypes MixSpells(string input)
     {
-        if (spellBook.ContainsKey(input) == false)
+
+        string corrected = new string(AlphabetizeRunes(input.ToCharArray()));
+
+
+        if (spellBook.ContainsKey(corrected) == false)
         {
             
             return Type.ElementalSpellTypes.Neutral;
         }
-        return spellBook[input];
+        return spellBook[corrected];
+    }
+
+    char[] AlphabetizeRunes(char[] runes)
+    {
+        for (int i = 0; i < runes.Length; ++i)
+        {
+            for(int j = i; j < runes.Length; ++j)
+            {
+                if((int)runes[i] > (int)runes[j])
+                {
+                    char temp = runes[i];
+                    runes[i] = runes[j];
+                    runes[j] = temp;
+                }
+            }
+        }
+        return runes;
     }
 
     public char GetRuneType(Type.ElementalSpellTypes type)

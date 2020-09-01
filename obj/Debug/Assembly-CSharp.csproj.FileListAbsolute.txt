@@ -281,3 +281,5 @@ C:\Users\jessieaniguid\Desktop\GitVersions\Magica\obj\Debug\Assembly-CSharp.cspr
 C:\Users\jessieaniguid\Desktop\GitVersions\Magica\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 C:\Users\jessieaniguid\Desktop\GitVersions\Magica\obj\Debug\Assembly-CSharp.dll
 C:\Users\jessieaniguid\Desktop\GitVersions\Magica\obj\Debug\Assembly-CSharp.pdb
+C:\Users\jessieaniguid\Desktop\GitVersions\Magica\Temp\bin\Debug\UnityEngine.WebGLModule.dll
+C:\Users\jessieaniguid\Desktop\GitVersions\Magica\Temp\bin\Debug\UnityEngine.WebGLModule.pdb
