@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spell_Fire : Spell
+public class Spell_Fire : SpellButton
 {
     public override void InitializeElement()
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spell_Grass : Spell
+public class Spell_Grass : SpellButton
 {
 
     public override void InitializeElement()

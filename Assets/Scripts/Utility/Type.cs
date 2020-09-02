@@ -34,4 +34,12 @@ public class Type : MonoBehaviour
 
     }
 
+    public enum SpeedModifier
+    {
+        None,
+        LightSlow,
+        MediumSlow,
+        HardSlow
+    }
+
 }

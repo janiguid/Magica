@@ -89,12 +89,17 @@
     <Compile Include="Assets\Scripts\Player\SO_PlayerStats.cs" />
     <Compile Include="Assets\Scripts\Player\Shield.cs" />
     <Compile Include="Assets\Scripts\Player\Targeter.cs" />
-    <Compile Include="Assets\Scripts\SpellButtons\Spell.cs" />
+    <Compile Include="Assets\Scripts\SpellButtons\SpellButton.cs" />
     <Compile Include="Assets\Scripts\SpellButtons\SpellMixer.cs" />
     <Compile Include="Assets\Scripts\SpellButtons\SpellSound.cs" />
     <Compile Include="Assets\Scripts\SpellButtons\Spell_Fire.cs" />
     <Compile Include="Assets\Scripts\SpellButtons\Spell_Grass.cs" />
     <Compile Include="Assets\Scripts\SpellButtons\Spell_Water.cs" />
+    <Compile Include="Assets\Scripts\Spells\Fireball.cs" />
+    <Compile Include="Assets\Scripts\Spells\Missile.cs" />
+    <Compile Include="Assets\Scripts\Spells\Spell.cs" />
+    <Compile Include="Assets\Scripts\Spells\SpellBook.cs" />
+    <Compile Include="Assets\Scripts\Spells\SpellEffect.cs" />
     <Compile Include="Assets\Scripts\UI\MapElement.cs" />
     <Compile Include="Assets\Scripts\UI\MenuElement.cs" />
     <Compile Include="Assets\Scripts\UI\PanelButton.cs" />
@@ -103,6 +108,7 @@
     <Compile Include="Assets\Scripts\Utility\CameraShaker.cs" />
     <Compile Include="Assets\Scripts\Utility\DeathParticles.cs" />
     <Compile Include="Assets\Scripts\Utility\EffectsHandler.cs" />
+    <Compile Include="Assets\Scripts\Utility\Extensions.cs" />
     <Compile Include="Assets\Scripts\Utility\FrameRateHandler.cs" />
     <Compile Include="Assets\Scripts\Utility\Maximums.cs" />
     <Compile Include="Assets\Scripts\Utility\SO_LevelConfig.cs" />
