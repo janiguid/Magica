@@ -9,6 +9,7 @@ public class SO_GameInfoInstance : ScriptableObject
     [SerializeField] private bool tutorialCompleted;
     [SerializeField] private int currentLevel;
     [SerializeField] private int furthestLevel;
+    [SerializeField] private int previousLevel;
 
     public bool TutorialCompleted
     {
@@ -42,6 +43,18 @@ public class SO_GameInfoInstance : ScriptableObject
         set
         {
             furthestLevel = value;
+        }
+    }
+    public int PreviousLevel
+    {
+        get
+        {
+            return previousLevel;
+        }
+
+        set
+        {
+            previousLevel = value;
         }
     }
 

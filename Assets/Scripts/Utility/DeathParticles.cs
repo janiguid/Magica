@@ -23,7 +23,9 @@ public class DeathParticles : MonoBehaviour
 
     public void Play(Type.ElementalSpellTypes type, Transform trans)
     {
-        transform.position = trans.position;
+        Vector3 fixedPosition = trans.position;
+        fixedPosition.z = -1;
+        transform.position = fixedPosition;
         if (particleDict.ContainsKey(type))
         {
             particleDict[type].Play();

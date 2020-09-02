@@ -466,6 +466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 351de4d56804c964aa42f6f785c7d5ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameInfoInstance: {fileID: 0}
   SceneToGoTo: 0
 --- !u!114 &276352997
 MonoBehaviour:
@@ -1498,6 +1499,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 351de4d56804c964aa42f6f785c7d5ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameInfoInstance: {fileID: 11400000, guid: 782204c37ae4c4e478213cb596d6e395, type: 2}
   SceneToGoTo: 3
 --- !u!114 &724901753
 MonoBehaviour:

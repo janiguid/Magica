@@ -69,10 +69,7 @@ public class Projectile : MonoBehaviour
     public void ResetPosition()
     {
 
-        if (deathParticles)
-        {
-            deathParticles.Play(myType, transform);
-        }
+
         gameObject.SetActive(false);
         transform.position = originalPosition;
         target = Vector3.zero;
@@ -113,7 +110,13 @@ public class Projectile : MonoBehaviour
             Monster target = collision.gameObject.GetComponent<Monster>();
             if (target.IsTargeted)
             {
-                print("Found Target Monster");
+
+                if (deathParticles)
+                {
+                    deathParticles.Play(myType, collision.transform);
+                }
+
+
                 ResetPosition();
                 float InitialDamage = 10f;
 

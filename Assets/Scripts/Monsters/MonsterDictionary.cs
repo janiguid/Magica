@@ -72,7 +72,7 @@ public class MonsterDictionary
             return MultiplierChart[Pairing];
         }
 
-        return 0f;
+        return 0.5f;
 
     }
 }

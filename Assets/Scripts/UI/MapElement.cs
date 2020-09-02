@@ -14,6 +14,9 @@ public class MapElement : MonoBehaviour
     public void ConfigureLevel()
     {
         placeholderLevel.SetMonsterOrder(myLevel.GetMonsterOrder());
+
+        gameInstance.PreviousLevel = gameLevel;
+
         SceneManager.LoadScene(gameLevel);
 
         if (gameInstance)

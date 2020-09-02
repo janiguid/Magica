@@ -11,6 +11,7 @@ public class MonsterButtonSubject : MonoBehaviour
     [SerializeField] private GameObject descriptionBox;
     [SerializeField] private Image[] weaknessImages;
     [SerializeField] private Sprite[] elementIcons;
+    [SerializeField] private Text[] weaknessCounters;
 
     [Header("Timers")]
     [SerializeField] private float buttonCooldown;
@@ -95,20 +96,20 @@ public class MonsterButtonSubject : MonoBehaviour
     void ConfigureWeaknesses(string types)
     {
         char[] charWeaknessArray = types.ToCharArray();
-
+        int[] weaknessCount = new int[3];
 
         for(int i = 0; i < charWeaknessArray.Length; ++i)
         {
             if(charWeaknessArray[i] == 'f')
             {
-                weaknessImages[i].sprite = elementIcons[0];
+                weaknessCount[0]++;
             }else if(charWeaknessArray[i] == 'w')
             {
-                weaknessImages[i].sprite = elementIcons[1];
+                weaknessCount[1]++;
             }
             else if(charWeaknessArray[i] == 'g')
             {
-                weaknessImages[i].sprite = elementIcons[2];
+                weaknessCount[2]++;
             }
             else
             {
@@ -116,6 +117,12 @@ public class MonsterButtonSubject : MonoBehaviour
                 weaknessImages[i].sprite = elementIcons[0];
             }
         }
+
+        for(int i = 0; i < weaknessCount.Length; ++i)
+        {
+            weaknessCounters[i].text = weaknessCount[i].ToString();
+        }
+
     }
 
 }
