@@ -7,13 +7,16 @@ public class SpellBook : MonoBehaviour
     private Dictionary<Type.ElementalSpellTypes, GameObject> codex;
 
 
-    [SerializeField] private GameObject fireBall;
+    [SerializeField] private GameObject SPL_FireBall;
+    [SerializeField] private GameObject SPL_IceBall;
+
     // Start is called before the first frame update
     void Start()
     {
         codex = new Dictionary<Type.ElementalSpellTypes, GameObject>();
 
-        codex.Add(Type.ElementalSpellTypes.Fire, fireBall);
+        codex.Add(Type.ElementalSpellTypes.Fire, SPL_FireBall);
+        codex.Add(Type.ElementalSpellTypes.Water, SPL_IceBall);
     }
 
 

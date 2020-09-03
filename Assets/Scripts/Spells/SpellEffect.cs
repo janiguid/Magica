@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class SpellEffect
 {
-    float speedModifier;
-    float damageModifier;
-    float defenseModifier;
-
-    public SpellEffect(float spdMod, float dmgMod, float defMod)
+    public SpellEffect(float spdMod, float atkMod, float defMod)
     {
-        speedModifier = spdMod;
-        damageModifier = dmgMod;
-        defenseModifier = defMod;
+        SpeedModifier = spdMod;
+        AttackModifier = atkMod;
+        DefenseModifier = defMod;
     }
+
+    public float SpeedModifier { get; set; }
+
+    public float AttackModifier { get; set; }
+
+    public float DefenseModifier { get; set; }
 }

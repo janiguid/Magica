@@ -31,7 +31,11 @@ public class Fireball : Missile
     {
         if (collision.GetComponent<IDamageable>() != null)
         {
+            collision.GetComponent<IModifiable>().ModifyStats(spellEffect);
             collision.GetComponent<IDamageable>().ApplyDamage(damageValue);
+            
+
+            //start coroutine and destroy here
         }
     }
 }
