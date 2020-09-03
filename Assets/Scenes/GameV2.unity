@@ -452,13 +452,14 @@ GameObject:
   m_Component:
   - component: {fileID: 379844393}
   - component: {fileID: 379844392}
+  - component: {fileID: 379844394}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &379844392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -486,6 +487,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &379844394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379844391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5879b6a607dd7247969ebab3fee8cee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemies:
+  - {fileID: 268090195196041140, guid: 102e655b8ac15904fb5489090e24df19, type: 3}
+  enemyPool: []
+  initialEnemyCount: 0
+  totalEnemyCount: 0
+  spawnRatePerSecond: 0
 --- !u!1 &442322131
 GameObject:
   m_ObjectHideFlags: 0
@@ -761,6 +780,8 @@ MonoBehaviour:
   SPL_FireBall: {fileID: 2330926007381559306, guid: 1c94b5a8121af7a42aa6695c76eddf94,
     type: 3}
   SPL_IceBall: {fileID: 8745348439801326526, guid: 802c351a9599c5f468ed30a8c6ebfa50,
+    type: 3}
+  SUM_FrozenPuddle: {fileID: 8469782156390383667, guid: d95cc635a7347ae49a2f3362c9287f10,
     type: 3}
 --- !u!4 &738754797
 Transform:
@@ -1725,11 +1746,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mon_Firo
-      objectReference: {fileID: 0}
-    - target: {fileID: 268090195196041141, guid: 102e655b8ac15904fb5489090e24df19,
-        type: 3}
-      propertyPath: speed
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 268090195196041160, guid: 102e655b8ac15904fb5489090e24df19,
         type: 3}

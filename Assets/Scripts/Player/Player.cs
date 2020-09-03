@@ -81,7 +81,7 @@ public class Player : MonoBehaviour
 
         blast = Instantiate (spellBook.GetSpell(element));
         blast.transform.position = transform.position;
-        blast.GetComponent<Spell>().SetTarget(target);
+        blast.GetComponent<Spell>().SetTarget(target, transform.position);
         ResetSpells();
         //reset spell
     }

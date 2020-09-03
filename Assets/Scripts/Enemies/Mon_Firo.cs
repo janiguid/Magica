@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mon_Firo : Enemy
+public class Mon_Firo : Enemy, ISusceptible
 {
     private void Update()
     {
@@ -13,6 +13,21 @@ public class Mon_Firo : Enemy
     {
         health -= dam;
 
-        if (health <= 0) Destroy(gameObject);
+        if (health <= 0) gameObject.SetActive(false);
     }
+
+    public void ApplySlow(float speedMod, float duration)
+    {
+        if (speedMod == 0) speedMod = 1;
+        speed *= speedMod;
+    }
+
+    public void ApplyDOT(float damage, float duration)
+    {
+        
+    }
+
+    
+
+
 }

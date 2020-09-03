@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="Assets\Interfaces\IDamageable.cs" />
     <Compile Include="Assets\Interfaces\IModifiable.cs" />
+    <Compile Include="Assets\Interfaces\ISusceptible.cs" />
     <Compile Include="Assets\JMOAssets\Cartoon FX\Demo\Assets\CFX_AutoStopLoopedEffect.cs" />
     <Compile Include="Assets\JMOAssets\Cartoon FX\Demo\Assets\CFX_Demo_New.cs" />
     <Compile Include="Assets\JMOAssets\Cartoon FX\Demo\Assets\CFX_Demo_RandomDir.cs" />
@@ -75,6 +76,7 @@
     <Compile Include="Assets\JMOAssets\Cartoon FX\Scripts\CFX_LightFlicker.cs" />
     <Compile Include="Assets\JMOAssets\Cartoon FX\Scripts\CFX_LightIntensityFade.cs" />
     <Compile Include="Assets\Scripts\Enemies\Enemy.cs" />
+    <Compile Include="Assets\Scripts\Enemies\EnemyPool.cs" />
     <Compile Include="Assets\Scripts\Enemies\Mon_Firo.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IInteractable.cs" />
     <Compile Include="Assets\Scripts\Map\MapManager.cs" />
@@ -98,11 +100,13 @@
     <Compile Include="Assets\Scripts\SpellButtons\Spell_Fire.cs" />
     <Compile Include="Assets\Scripts\SpellButtons\Spell_Grass.cs" />
     <Compile Include="Assets\Scripts\SpellButtons\Spell_Water.cs" />
-    <Compile Include="Assets\Scripts\Spells\Fireball.cs" />
     <Compile Include="Assets\Scripts\Spells\Missile.cs" />
+    <Compile Include="Assets\Scripts\Spells\Missiles\Fireball.cs" />
     <Compile Include="Assets\Scripts\Spells\Spell.cs" />
     <Compile Include="Assets\Scripts\Spells\SpellBook.cs" />
     <Compile Include="Assets\Scripts\Spells\SpellEffect.cs" />
+    <Compile Include="Assets\Scripts\Spells\Summon.cs" />
+    <Compile Include="Assets\Scripts\Spells\Summons\SUM_FrozenPuddle.cs" />
     <Compile Include="Assets\Scripts\UI\MapElement.cs" />
     <Compile Include="Assets\Scripts\UI\MenuElement.cs" />
     <Compile Include="Assets\Scripts\UI\PanelButton.cs" />

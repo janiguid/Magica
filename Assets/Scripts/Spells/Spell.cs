@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Spell : MonoBehaviour
 {
-    [Header("Modifiers")]
-    [SerializeField] private float speedMod;
+
 
 
     [SerializeField] protected Vector2 target;
@@ -17,6 +16,6 @@ public class Spell : MonoBehaviour
     {
         target = Vector2.zero;
     }
-    public virtual void SetTarget(Vector2 tgt) { }
+    public virtual void SetTarget(Vector2 tgt, Vector2 playerPosition) { }
 
 }
