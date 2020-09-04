@@ -8,7 +8,8 @@ public class Fireball : Missile
     // Start is called before the first frame update
     void Start()
     {
-        spellEffect = new SpellEffect(speedDebuff, attackDebuff, defenseDebuff);
+        spellEffect = new SpellEffect(speedDebuff, attackDebuff, defenseDebuff
+            , spdModDuration, atkModDuration, defModDuration);
         if (lifeTime == 0) lifeTime = 4;
     }
 
@@ -25,13 +26,17 @@ public class Fireball : Missile
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<IDamageable>() != null)
+        if(collision.tag != "Player")
         {
-            collision.GetComponent<IModifiable>().ModifyStats(spellEffect);
-            collision.GetComponent<IDamageable>().ApplyDamage(damageValue);
+            if (collision.GetComponent<IDamageable>() != null)
+            {
+                collision.GetComponent<IModifiable>().ModifyStats(spellEffect);
+                collision.GetComponent<IDamageable>().ApplyDamage(damageValue);
 
-            Destroy(gameObject);
-            //start coroutine and destroy here
+                Destroy(gameObject);
+                //start coroutine and destroy here
+            }
         }
+
     }
 }

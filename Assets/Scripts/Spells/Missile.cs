@@ -13,6 +13,10 @@ public class Missile : Spell
     [SerializeField] protected float attackDebuff;
     [SerializeField] protected float defenseDebuff;
 
+    [Header("Stat Mod Timers")]
+    [SerializeField] protected float spdModDuration;
+    [SerializeField] protected float atkModDuration;
+    [SerializeField] protected float defModDuration;
     private Rigidbody2D rb2D;
 
 

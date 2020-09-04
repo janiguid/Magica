@@ -6,9 +6,9 @@ public interface IModifiable
 {
     void ModifyStats(SpellEffect effect);
 
-    void ModifySpeed(float multiplier);
+    void ModifySpeed(float multiplier, float duration);
 
-    void ModifyAttack(float multiplier);
+    void ModifyAttack(float multiplier, float duration);
 
-    void ModifyDefense(float multiplier);
+    void ModifyDefense(float multiplier, float duration);
 }

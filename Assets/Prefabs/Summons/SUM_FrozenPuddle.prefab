@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 8469782156390383666}
   - component: {fileID: 8469782156390383671}
   - component: {fileID: -3026117578815479118}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SUM_FrozenPuddle
-  m_TagString: Untagged
+  m_TagString: Summon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,7 +97,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {x: 0, y: 0}
-  lifeTime: 3
+  lifeTime: 10
+  layer:
+    serializedVersion: 2
+    m_Bits: 256
   duration: 0
   speedMod: 0.5
 --- !u!58 &8469782156390383671

@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 268090195196041162}
   - component: {fileID: 268090195196041141}
   m_Layer: 0
-  m_Name: Mon_Firo
-  m_TagString: Untagged
+  m_Name: MON_Firo
+  m_TagString: Shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,7 +93,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.023619115, y: -0.11476922}
@@ -112,6 +112,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
-  attack: 0
+  attack: 5
   speed: 0.3
   defense: 5

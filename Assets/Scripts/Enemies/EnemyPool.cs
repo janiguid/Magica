@@ -21,7 +21,8 @@ public class EnemyPool : MonoBehaviour
         {
             for (int i = 0; i < initialEnemyCount; ++i)
             {
-                GameObject temp = Instantiate(enemies[0]);
+                
+                GameObject temp = Instantiate(enemies[Random.Range(0, enemies.Length)]);
                 temp.SetActive(false);
                 enemyPool.Add(temp);
             }

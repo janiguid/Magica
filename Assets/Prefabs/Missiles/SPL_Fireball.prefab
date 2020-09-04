@@ -99,9 +99,13 @@ MonoBehaviour:
   target: {x: 0, y: 0}
   lifeTime: 0
   damageValue: 5
+  projectileSpeed: 6
   speedDebuff: 0
   attackDebuff: 0
   defenseDebuff: 0
+  spdModDuration: 0
+  atkModDuration: 0
+  defModDuration: 0
 --- !u!58 &2330926007381559303
 CircleCollider2D:
   m_ObjectHideFlags: 0
