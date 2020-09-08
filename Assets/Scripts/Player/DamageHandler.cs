@@ -2,18 +2,36 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Character), typeof(PlayerStats))]
 public class DamageHandler : MonoBehaviour, IDamageable
 {
-    [Header("Player Stats")]
-    [SerializeField] private float health;
-    [SerializeField] private float defense;
-    [SerializeField] private float attack;
+
+    private Character playerChar;
+    private PlayerStats playerStats;
+
+    private void Start()
+    {
+        if (GetComponent<Character>())
+        {
+            playerChar = GetComponent<Character>();
+        }
+
+        if (GetComponent<PlayerStats>())
+        {
+            playerStats = GetComponent<PlayerStats>();
+        }
+    }
 
     public void ApplyDamage(float dam)
     {
-        health -= dam - defense / 2;
+        if (playerChar)
+        {
+            float updatedHealth = playerStats.Health - (dam - (playerStats.Defense * .1f));
+            playerStats.Health = updatedHealth;
 
-        if (health <= 0) print("I am dead");
+            if (playerStats.Health <= 0) print("I am dead");
+        }
+
     }
 
 

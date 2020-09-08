@@ -1461,12 +1461,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1542182965}
   - component: {fileID: 1542182964}
+  - component: {fileID: 1542182971}
+  - component: {fileID: 1542182970}
   - component: {fileID: 1542182966}
   - component: {fileID: 1542182968}
   - component: {fileID: 1542182967}
   - component: {fileID: 1542182969}
   m_Layer: 0
-  m_Name: IMG_Elia
+  m_Name: CHAR_Elia
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1585,9 +1587,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17f802fcff2cb204f85539686f02a86d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 40
-  defense: 5
-  attack: 10
 --- !u!58 &1542182969
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1604,6 +1603,38 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.8483334
+--- !u!114 &1542182970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542182963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 884719eb99696704e94e7db6a483d33a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  portrait: {fileID: 21300000, guid: 5a41a60783e247643b18fed41533e7ef, type: 3}
+  baseHealth: 20
+  baseAttack: 5
+  baseDefense: 5
+  baseSpeed: 0
+--- !u!114 &1542182971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542182963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8e8f1218d8d85349a5f94d55b84e789, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  defense: 0
+  attack: 0
 --- !u!1 &1747591252
 GameObject:
   m_ObjectHideFlags: 0

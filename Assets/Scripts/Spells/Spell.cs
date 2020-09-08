@@ -16,6 +16,9 @@ public class Spell : MonoBehaviour
     {
         target = Vector2.zero;
     }
+
+    public virtual void AddCharacterModifiers(float plusAtt, float plusSpd) { }
+
     public virtual void SetTarget(Vector2 tgt, Vector2 playerPosition) { }
 
 }

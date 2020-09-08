@@ -1,14 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[RequireComponent(typeof(Character))]
 public class Player : MonoBehaviour
 {
     [Header ("Cosmetics")]
     [SerializeField] private GameObject projectilePrefab;
-
     [Header ("Spell Mechanics")]
     [SerializeField] private int maxSpellLength;
+
 
     protected Type.ElementalSpellTypes element;
     public bool hasValidSpell;

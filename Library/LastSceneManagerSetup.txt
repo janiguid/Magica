@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/GameV2.unity
+- path: Assets/Scenes/MagicCodex.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

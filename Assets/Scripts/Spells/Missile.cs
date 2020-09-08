@@ -19,6 +19,10 @@ public class Missile : Spell
     [SerializeField] protected float defModDuration;
     private Rigidbody2D rb2D;
 
+    public override void AddCharacterModifiers(float plusAtt, float plusSpd)
+    {
+        
+    }
 
     public override void SetTarget(Vector2 tgt, Vector2 playerPosition)
     {
