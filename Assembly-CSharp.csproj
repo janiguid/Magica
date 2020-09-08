@@ -89,6 +89,7 @@
     <Compile Include="Assets\Scripts\Monsters\MonsterPool.cs" />
     <Compile Include="Assets\Scripts\Monsters\MonsterQueue.cs" />
     <Compile Include="Assets\Scripts\Monsters\MonsterSpriteDictionary.cs" />
+    <Compile Include="Assets\Scripts\Player\CastOfCharacters.cs" />
     <Compile Include="Assets\Scripts\Player\Character.cs" />
     <Compile Include="Assets\Scripts\Player\Codex\CharacterButtonHandler.cs" />
     <Compile Include="Assets\Scripts\Player\Codex\CharacterButtons.cs" />
@@ -115,6 +116,7 @@
     <Compile Include="Assets\Scripts\UI\MapElement.cs" />
     <Compile Include="Assets\Scripts\UI\MenuElement.cs" />
     <Compile Include="Assets\Scripts\UI\PanelButton.cs" />
+    <Compile Include="Assets\Scripts\UI\PickCharacter.cs" />
     <Compile Include="Assets\Scripts\UI\SpellVisualizer.cs" />
     <Compile Include="Assets\Scripts\UI\UICloser.cs" />
     <Compile Include="Assets\Scripts\Utility\CameraShaker.cs" />

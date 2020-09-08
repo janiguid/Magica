@@ -6,9 +6,12 @@ public class CharacterButtons : MonoBehaviour, IInteractable
 {
     [SerializeField] private Sprite characterImage;
     [SerializeField] private string charDescripttion;
-    [SerializeField] private string specialSpell;
+
+    [SerializeField] private CastOfCharacters.CharacterList characterType;
 
 
+
+    private CastOfCharacters characterDict;
     SpriteRenderer mySpriteRenderer;
     Bounds bounds;
     private void Start()
@@ -16,6 +19,7 @@ public class CharacterButtons : MonoBehaviour, IInteractable
         mySpriteRenderer = GetComponent<SpriteRenderer>();
         if (mySpriteRenderer == null) gameObject.AddComponent<SpriteRenderer>();
 
+        characterDict = new CastOfCharacters();
 
         characterImage = mySpriteRenderer.sprite;
         bounds = mySpriteRenderer.bounds;
@@ -35,10 +39,18 @@ public class CharacterButtons : MonoBehaviour, IInteractable
         return false;
     }
 
-    public void GetMonsterInformation(out Sprite charSprite, out string monDesc, out string spell)
+    public void GetCharacterInfo(out Sprite charSprite, out string monDesc, out string spell, out string hp, out string att, out string def)
     {
         charSprite = characterImage;
         monDesc = charDescripttion;
-        spell = specialSpell;
+        spell = characterDict.characterDictionary[characterType].SpecialSpell;
+        hp = characterDict.characterDictionary[characterType].HP.ToString();
+        att = characterDict.characterDictionary[characterType].ATT.ToString();
+        def = characterDict.characterDictionary[characterType].DEF.ToString();
+    }
+
+    public CastOfCharacters.CharacterList GetCharacterType()
+    {
+        return characterType;
     }
 }

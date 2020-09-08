@@ -9,14 +9,21 @@ public class Character : MonoBehaviour
     [SerializeField] private float baseAttack;
     [SerializeField] private float baseDefense;
     [SerializeField] private float baseSpeed;
+    [SerializeField] private string specialSpell;
 
-    //public Character(Sprite port, float health, float atk, float def)
-    //{
-    //    baseHealth = health;
-    //    portrait = port;
-    //    baseAttack = atk;
-    //    baseDefense = def;
-    //}
+    [SerializeField] private SO_GameInfoInstance gameInstance;
+
+    private void Awake()
+    {
+        CastOfCharacters castOfCharacters = new CastOfCharacters();
+        CharacterData character = castOfCharacters.characterDictionary[gameInstance.CurrentChar];
+
+        baseHealth = character.HP;
+        baseAttack = character.ATT;
+        baseDefense = character.DEF;
+
+        specialSpell = character.SpecialSpell;
+    }
 
     public Sprite GetSprite()
     {

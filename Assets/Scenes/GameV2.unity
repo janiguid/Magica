@@ -1620,6 +1620,8 @@ MonoBehaviour:
   baseAttack: 5
   baseDefense: 5
   baseSpeed: 0
+  specialSpell: 
+  gameInstance: {fileID: 11400000, guid: 782204c37ae4c4e478213cb596d6e395, type: 2}
 --- !u!114 &1542182971
 MonoBehaviour:
   m_ObjectHideFlags: 0

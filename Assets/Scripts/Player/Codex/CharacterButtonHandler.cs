@@ -13,9 +13,16 @@ public class CharacterButtonHandler : MonoBehaviour
     [SerializeField] private Sprite[] elementIcons;
     [SerializeField] private Text[] runeCounters;
 
+    [Header("Character Stats")]
+    [SerializeField] private Text HP;
+    [SerializeField] private Text ATT;
+    [SerializeField] private Text DEF;
+
+
     [Header("Timers")]
     [SerializeField] private float buttonCooldown;
 
+    [SerializeField] private PickCharacter pickButton;
 
     private CharacterButtons[] Observers;
 
@@ -24,6 +31,7 @@ public class CharacterButtonHandler : MonoBehaviour
     {
         Observers = FindObjectsOfType<CharacterButtons>();
         descriptionBox.SetActive(false);
+        pickButton = FindObjectOfType<PickCharacter>();
     }
 
     // Update is called once per frame
@@ -68,10 +76,24 @@ public class CharacterButtonHandler : MonoBehaviour
                     Sprite tempSprite;
                     string tempText;
                     string tempWeakness;
-                    Observers[i].GetMonsterInformation(out tempSprite, out tempText, out tempWeakness);
+                    string tempHP;
+                    string tempATT;
+                    string tempDEF; 
+
+                    Observers[i].GetCharacterInfo(out tempSprite, out tempText, out tempWeakness, out tempHP, out tempATT, out tempDEF);
+
                     charImage.sprite = tempSprite;
                     charText.text = tempText;
+                    HP.text = tempHP;
+                    ATT.text = tempATT;
+                    DEF.text = tempDEF;
 
+                    if (pickButton)
+                    {
+                        print("Changing potential character");
+                        pickButton.PotentialCharacter = Observers[i].GetCharacterType();
+                    }
+                    
                     ConfigureWeaknesses(tempWeakness);
 
                     descriptionBox.SetActive(true);

@@ -15,3 +15,5 @@ MonoBehaviour:
   tutorialCompleted: 0
   currentLevel: 0
   furthestLevel: 0
+  previousLevel: 0
+  currentCharacter: 1

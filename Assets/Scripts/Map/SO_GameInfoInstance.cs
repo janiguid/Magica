@@ -11,6 +11,9 @@ public class SO_GameInfoInstance : ScriptableObject
     [SerializeField] private int furthestLevel;
     [SerializeField] private int previousLevel;
 
+    [SerializeField] private CastOfCharacters.CharacterList currentCharacter;
+
+
     public bool TutorialCompleted
     {
         get
@@ -58,4 +61,16 @@ public class SO_GameInfoInstance : ScriptableObject
         }
     }
 
+    public CastOfCharacters.CharacterList CurrentChar
+    {
+        get
+        {
+            return currentCharacter;
+        }
+
+        set
+        {
+            currentCharacter = value;
+        }
+    }
 }
