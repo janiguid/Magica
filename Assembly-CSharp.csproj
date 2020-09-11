@@ -89,6 +89,7 @@
     <Compile Include="Assets\Scripts\Monsters\MonsterPool.cs" />
     <Compile Include="Assets\Scripts\Monsters\MonsterQueue.cs" />
     <Compile Include="Assets\Scripts\Monsters\MonsterSpriteDictionary.cs" />
+    <Compile Include="Assets\Scripts\Monsters\Pathfinder.cs" />
     <Compile Include="Assets\Scripts\Player\CastOfCharacters.cs" />
     <Compile Include="Assets\Scripts\Player\Character.cs" />
     <Compile Include="Assets\Scripts\Player\Codex\CharacterButtonHandler.cs" />

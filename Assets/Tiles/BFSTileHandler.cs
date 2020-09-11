@@ -5,22 +5,11 @@ using UnityEngine.Tilemaps;
 
 public class BFSTileHandler : MonoBehaviour
 {
-    public Tilemap tmap;
-    public BFSTile[,] blah;
+    [SerializeField] private Tilemap tmap;
     public Dictionary<Vector3Int, BFSTile> tileDict;
-    // Start is called before the first frame update
-    void Start()
+
+    private void Awake()
     {
-        //BFSTile curr = ScriptableObject.CreateInstance<BFSTile>();
-        //for (int i = 0; i < Screen.width/100; ++i)
-        //{
-        //    for(int j = 0; j < Screen.height/100; ++j)
-        //    {
-        //        print(i + " " + j);
-        //        Tile temp = ScriptableObject.Instantiate(blah);
-        //        tmap.SetTile(new Vector3Int(i, j, -1), temp);
-        //    }
-        //}
 
         tileDict = new Dictionary<Vector3Int, BFSTile>();
 
@@ -30,8 +19,8 @@ public class BFSTileHandler : MonoBehaviour
         int xIter = tmap.cellBounds.min.x;
         int yIter = tmap.cellBounds.min.y;
 
-        blah = new BFSTile[xAmount, yAmount];
-
+        BFSTile tileTemp;
+        Vector3Int vectorTemp;
         for (int x = 0; x < xAmount; ++x)
         {
 
@@ -42,31 +31,54 @@ public class BFSTileHandler : MonoBehaviour
                 {
                     //blah[xIter, yIter] = (BFSTile)tmap.GetTile(new Vector3Int(xIter, yIter, 0));
 
-                    Vector3Int leegle = new Vector3Int(xIter, yIter, 0);
+                    vectorTemp = new Vector3Int(xIter, yIter, 0);
+                    tileTemp = (BFSTile)tmap.GetTile(vectorTemp);
+                    if (tileTemp.IsWalkable())
+                    {
+                        tileDict[vectorTemp] = tileTemp;
+                    }
 
-                    tileDict[leegle] = (BFSTile)tmap.GetTile(leegle);
                 }
                 catch
                 {
                     print(xIter + " " + yIter);
                 }
-                
-                
+
+
                 ++yIter;
             }
 
             ++xIter;
         }
 
-        foreach(var item in tileDict)
-        {
-            print("Tile at: " + item.Key + " : " + tmap.HasTile(item.Key));
-        }
 
-        print(tmap.origin);
-        print(tmap.cellBounds.min);
-        print(tmap.cellBounds.max);
+        print("All tiles are equal " + (tileDict[new Vector3Int(11, -4, 0)] == tileDict[new Vector3Int(11, -5, 0)]));
+    }
+    // Start is called before the first frame update
+    void Start()
+    {
+
+
+        //foreach(var item in tileDict)
+        //{
+        //    print("Tile at: " + item.Key + " : " + item.Value.IsWalkable());
+        //}
+
+        //print(tmap.origin);
+        //print(tmap.cellBounds.min);
+        //print(tmap.cellBounds.max);
     }
 
 
+    public Vector3 ConvertCellPos(Vector3Int vect)
+    {
+        return tmap.CellToWorld(vect);
+    }
+
+    public Vector3Int ConvertWorldPos(Vector3 vect)
+    {
+        return tmap.WorldToCell(vect);
+    }
+
+    
 }
