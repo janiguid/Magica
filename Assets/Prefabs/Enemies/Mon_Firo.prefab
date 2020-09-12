@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 268090195196041163}
   - component: {fileID: 268090195196041162}
   - component: {fileID: 268090195196041141}
+  - component: {fileID: 359788435}
   m_Layer: 0
-  m_Name: MON_Firo
+  m_Name: Mon_Firo
   m_TagString: Shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -115,3 +116,21 @@ MonoBehaviour:
   attack: 5
   speed: 0.3
   defense: 5
+--- !u!114 &359788435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 268090195196041140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37e3ead3f8f2fdf41979c7be1619cd05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grid: {fileID: 0}
+  target: {fileID: 0}
+  correctedTarget: {x: 0, y: 0, z: 0}
+  visualize: 0
+  blockCheckingImage: {fileID: 0}
+  finalPathImage: {fileID: 0}

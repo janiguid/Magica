@@ -34,6 +34,8 @@ public class EnemyPool : MonoBehaviour
         StartCoroutine(Spawner());
     }
 
+    
+
     IEnumerator Spawner()
     {
         while (true)
@@ -44,17 +46,19 @@ public class EnemyPool : MonoBehaviour
 
     }
 
+
+
     void SpawnEnemy()
     {
 
         Vector3 corrected = new Vector3(
-        Random.Range(-Screen.width / 2, Screen.width / 2),
-        Random.Range(-Screen.height / 2, Screen.height / 2),
+        Random.Range(0, Screen.width),
+        Random.Range(Screen.height / 2, Screen.height),
         0
         );
 
         corrected = Camera.main.ScreenToWorldPoint(corrected);
-        corrected.z = 0;
+        corrected.z = -1;
 
         for (int i = 0; i < enemyPool.Count; ++i)
         {

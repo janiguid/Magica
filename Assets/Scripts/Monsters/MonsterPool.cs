@@ -11,7 +11,6 @@ public class MonsterPool : MonoBehaviour
     [SerializeField] private EffectsHandler MonsterEffects;
     private MonsterSpriteDictionary spriteDictionary;
 
-
     private void Awake()
     {
         MonsterEffects = FindObjectOfType<EffectsHandler>();

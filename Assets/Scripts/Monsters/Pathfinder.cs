@@ -5,16 +5,21 @@ using UnityEngine;
 public class Pathfinder : MonoBehaviour
 {
     [SerializeField] private BFSTileHandler grid;
-    [SerializeField] private Queue<Vector3Int> pathFound;
-    [SerializeField] private List<Vector3Int> finalPath;
 
+
+    [Header("Target Info")]
+    [SerializeField] private Transform target;
+    [SerializeField] private Vector3Int correctedTarget;
+    [SerializeField] private bool foundTarget;
+
+    [Header("Visualization Tools")]
+    [SerializeField] private bool visualize;
     [SerializeField] private GameObject blockCheckingImage;
     [SerializeField] private GameObject finalPathImage;
 
-    [SerializeField] private Transform target;
-    [SerializeField] private Vector3Int correctedTarget;
 
-
+    [SerializeField] private Queue<Vector3Int> pathFound;
+    [SerializeField] private List<Vector3> finalPath;
     private Dictionary<Vector3Int, Vector3Int> adjacencyList;
     private AudioSource audio;
     private static Vector3Int FINAL_NODE = new Vector3Int(999, 999, 999);
@@ -23,17 +28,34 @@ public class Pathfinder : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        grid = FindObjectOfType<BFSTileHandler>();
+        if(grid == null) grid = FindObjectOfType<BFSTileHandler>();
+        if (target == null) target = FindObjectOfType<Player>().transform;
         pathFound = new Queue<Vector3Int>();
+        finalPath = new List<Vector3>();
         adjacencyList = new Dictionary<Vector3Int, Vector3Int>();
-        
+        foundTarget = false;
 
         correctedTarget = grid.ConvertWorldPos(target.position);
 
         audio = GetComponent<AudioSource>();
 
-        //FindPath();
-        StartCoroutine(VisualizePath());
+        FindPath();
+        //StartCoroutine(VisualizePath());
+    }
+
+    private void OnEnable()
+    {
+        finalPath.Clear();
+        adjacencyList.Clear();
+        pathFound.Clear();
+        StopAllCoroutines();
+
+        FindPath();
+    }
+
+    private void OnDisable()
+    {
+        StopAllCoroutines();
     }
 
     void FindPath()
@@ -144,19 +166,33 @@ public class Pathfinder : MonoBehaviour
                         yield break;
                     }
 
-                    //print("Added: " + directions[i]);
-
 
                     pathFound.Enqueue(directions[i]);
-                    Vector3 start = grid.ConvertCellPos(directions[i]);
-                    start.x += 0.2f;
-                    start.y += 0.2f;
-                    Vector3 final = grid.ConvertCellPos(adjacencyList[directions[i]]);
-                    final.x += 0.2f;
-                    final.y += 0.2f;
-                    Vector3 size = new Vector3(0.5f, 0.5f, 0.5f);
-                    Instantiate(blockCheckingImage, start, Quaternion.identity);
-                    if (audio) audio.Play();
+
+
+                    if (visualize)
+                    {
+                        if (finalPathImage && blockCheckingImage)
+                        {
+                            Vector3 start = grid.ConvertCellPos(directions[i]);
+                            start.x += 0.2f;
+                            start.y += 0.2f;
+                            Vector3 final = grid.ConvertCellPos(adjacencyList[directions[i]]);
+                            final.x += 0.2f;
+                            final.y += 0.2f;
+                            Vector3 size = new Vector3(0.5f, 0.5f, 0.5f);
+                            Instantiate(blockCheckingImage, start, Quaternion.identity);
+                        }
+                        else
+                        {
+                            print("missing sprites");
+                        }
+
+                        if (audio) audio.Play();
+                    }
+
+
+                    
                     //Debug.DrawLine(start, final, Color.cyan, 10f);
                     yield return new WaitForSeconds(.2f);
                 }
@@ -165,12 +201,12 @@ public class Pathfinder : MonoBehaviour
         }
 
         print("DID NOT FIND: " + correctedTarget);
-        //get neighbors
-        //
+
     }
 
     void PrintResult(Vector3Int finalNode)
     {
+
         Vector3Int iter = finalNode;
         for(int i = 0; i < 50; ++i)
         {
@@ -179,15 +215,51 @@ public class Pathfinder : MonoBehaviour
             if(adjacencyList[iter] == FINAL_NODE)
             {
                 print("END NODE: " + iter);
+                StartCoroutine(BeginPath());
                 return;
             }
             Vector3 start = grid.ConvertCellPos(iter);
             start.x += 0.2f;
             start.y += 0.2f;
 
-            Instantiate(finalPathImage, start, Quaternion.identity);
-            print("Position:" + iter);
+            finalPath.Insert(0, start);
+
+            if (visualize)
+            {
+                if (finalPathImage)
+                {
+                    Instantiate(finalPathImage, start, Quaternion.identity);
+                }
+            }
+
+            
             iter = adjacencyList[iter];
         }
+
+        
+    }
+
+    IEnumerator BeginPath()
+    {
+        Vector3 tempTarget = finalPath[0];
+        int iter = 0;
+        while (Vector2.Distance(target.position, transform.position) > 0.05f)
+        {
+            if(Vector2.Distance(tempTarget, transform.position) >= 0.01f)
+            {
+                transform.SetPosition(Vector2.MoveTowards(transform.position, tempTarget, 2 * Time.deltaTime));
+            }
+            else
+            {
+                ++iter;
+                tempTarget = finalPath[iter];
+            }
+
+            yield return null;
+        }
+
+        foundTarget = true;
+        print("done movin");
+        yield break;
     }
 }

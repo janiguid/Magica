@@ -7,7 +7,7 @@ public class Mon_Firo : Enemy, ISusceptible
     WaitForSeconds wait;
     private void Update()
     {
-        transform.SetPosition(Vector2.MoveTowards(transform.position, playerLocation, speed * Time.deltaTime));
+        //transform.SetPosition(Vector2.MoveTowards(transform.position, playerLocation, speed * Time.deltaTime));
     }
 
     public override void ApplyDamage(float dam)
